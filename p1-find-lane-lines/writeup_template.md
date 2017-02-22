@@ -27,10 +27,10 @@ My pipeline consisted of 5 steps.
 
 My first step was to create a function to could read an image and convert into an transformed image. The whole transformation contained following process.
 
-#1. Convert input image into Grayscale. This removes the entire color so we can focus only on the white and black areas. 
-#2. Use Compter Vision Libraries(cv2 libraries) create a Guasian Blur. The guasian blur mechanism is used to reduce the image noise.
-#3. After the Guausian blur image is created, the next step is create a canny edge image which outlines the edges in an image.
-#4. The canny detected image 
+####1. Convert input image into Grayscale. This removes the entire color so we can focus only on the white and black areas. 
+####2. Use Compter Vision Libraries(cv2 libraries) create a Guasian Blur. The guasian blur mechanism is used to reduce the image noise.
+####3. After the Guausian blur image is created, the next step is create a canny edge image which outlines the edges in an image.
+####4. The canny detected image 
 
 
 
