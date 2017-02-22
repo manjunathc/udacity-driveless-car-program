@@ -29,8 +29,9 @@ My first step was to create a function to could read an image and convert into a
 
 * Convert input image into Grayscale. This removes the entire color so we can focus only on the white and black areas. 
 * Use Compter Vision Libraries(cv2 libraries) create a Guasian Blur. The guasian blur mechanism is used to reduce the image noise.
-* After the Guausian blur image is created, the next step is create a canny edge image which outlines the edges in an image. The canny image creates a outline.
-* 
+* After the Guausian blur image is created, the next step is create a canny edge image which outlines the edges in an image. The canny image creates a outline of the entire image.
+* Next step is to create a Lane Lines by color and masking all the areas. This is done by calling region_of_interest function which converts the input Guausian blurred image to a masked image (both color as well as regions).
+* Masked image is converted from line space to hough space. A line in image space will be a single point at the position (m, b) in Hough space.
 
 ![alt text][image1]
 
