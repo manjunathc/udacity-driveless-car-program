@@ -1,17 +1,7 @@
-#**Finding Lane Lines on the Road** 
-
-##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Finding Lane Lines on the Road**
 
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
 
 [//]: # (Image References)
 
@@ -25,9 +15,9 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-My pipeline consisted of 5 steps. 
+The transformation from Image to Video to Lane detection is described below.
 
-My first step was to create a function to could read an image and convert into an transformed image. The whole transformation contained following process.
+First step was to create a function to could read an image and use it to convert video file. The whole transformation process is described below.
 
 * Convert input image into Grayscale. This removes the entire color so we can focus only on the white and black areas. 
 * Use Compter Vision Libraries(cv2 libraries) create a Guasian Blur. The guasian blur mechanism is used to reduce the image noise.
@@ -50,8 +40,8 @@ My first step was to create a function to could read an image and convert into a
 
 ###2. Identify potential shortcomings with your current pipeline
 
-The Masked Image  parameters 
+The hough line calculation were not accurate. The resulted image and video didn't resememble the sample exmaple video. 
 
 ###3. Suggest possible improvements to your pipeline
 
-Improve Hough 
+Improve Hough calulation and draw lines functions.
