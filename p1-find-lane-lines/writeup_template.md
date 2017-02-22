@@ -7,15 +7,15 @@ The goals / steps of this project are the following:
 
 [image1]: ./converted_image.png "Grayscale"
 
-[image2]: ./white.mp4
+[linkname1]: ./white.mp4
 
-[image3]: ./yellow.mp4
+[linkname2]: ./yellow.mp4
 
 ---
 
 ### Reflection
 
-The Lane detection transformation from Image to Video to is described below.
+The Lane detection transformation from Image to Video is described below.
 
 First step was to create a function to could read an image and use it to convert video file. The whole transformation process is described below.
 
@@ -33,9 +33,9 @@ First step was to create a function to could read an image and use it to convert
 * Once the function is created, its verified for various image and a a helper fucntion is created.
 * The helper function was applied for Videos.
 
-[image2]: ./white.mp4
+[linkname1]: ./white.mp4
 
-[image3]: ./yellow.mp4
+[linkname2]: ./yellow.mp4
 
 
 ###2. Identify potential shortcomings with your current pipeline
