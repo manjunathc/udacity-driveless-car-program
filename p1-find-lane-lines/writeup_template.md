@@ -17,9 +17,9 @@ The goals / steps of this project are the following:
 
 [image1]: ./converted_image.png "Grayscale"
 
-[video1]: ./white.mp4
+[image2]: ./white.mp4
 
-[video2]: ./yellow.mp4
+[image3]: ./yellow.mp4
 
 ---
 
@@ -43,9 +43,9 @@ My first step was to create a function to could read an image and convert into a
 * Once the function is created, its verified for various image and a a helper fucntion is created.
 * The helper function was applied for Videos.
 
-[video1]: ./white.mp4
+[image2]: ./white.mp4
 
-[video2]: ./yellow.mp4
+[image3]: ./yellow.mp4
 
 
 ###2. Identify potential shortcomings with your current pipeline
