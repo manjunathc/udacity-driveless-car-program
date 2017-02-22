@@ -32,7 +32,7 @@ My first step was to create a function to could read an image and convert into a
 * After the Guausian blur image is created, the next step is create a canny edge image which outlines the edges in an image.
 * The canny detected image 
 
-![alt text][image2]:./converted_image.png "Hough Transformed"
+![alt text][image2]:../converted_image.png "Hough Transformed"
 
  
 
@@ -42,7 +42,7 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
-![alt text][image1]
+![alt text][image1]:../converted_image.png
 
 
 ###2. Identify potential shortcomings with your current pipeline
