@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-The transformation from Image to Video to Lane detection is described below.
+The Lane detection transformation from Image to Video to is described below.
 
 First step was to create a function to could read an image and use it to convert video file. The whole transformation process is described below.
 
