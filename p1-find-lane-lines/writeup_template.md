@@ -32,7 +32,7 @@ My first step was to create a function to could read an image and convert into a
 * After the Guausian blur image is created, the next step is create a canny edge image which outlines the edges in an image.
 * The canny detected image 
 
-[image2]:../converted_image.png "Hough Transformed"
+![alt text][image2]:./converted_image.png "Hough Transformed"
 
  
 
