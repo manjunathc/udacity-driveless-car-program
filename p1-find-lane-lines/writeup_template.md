@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./converted_image.png "Grayscale"
 
 ---
 
@@ -32,9 +32,7 @@ My first step was to create a function to could read an image and convert into a
 * After the Guausian blur image is created, the next step is create a canny edge image which outlines the edges in an image.
 * The canny detected image 
 
-![alt text][image2]:../converted_image.png "Hough Transformed"
-
- 
+![alt text][image1]
 
 First, I converted the images to grayscale, then I .... 
 
