@@ -29,30 +29,16 @@ My first step was to create a function to could read an image and convert into a
 
 * Convert input image into Grayscale. This removes the entire color so we can focus only on the white and black areas. 
 * Use Compter Vision Libraries(cv2 libraries) create a Guasian Blur. The guasian blur mechanism is used to reduce the image noise.
-* After the Guausian blur image is created, the next step is create a canny edge image which outlines the edges in an image.
-* The canny detected image 
+* After the Guausian blur image is created, the next step is create a canny edge image which outlines the edges in an image. The canny image creates a outline.
+* 
 
 ![alt text][image1]
-
-First, I converted the images to grayscale, then I .... 
-
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text][image1]:../converted_image.png
 
 
 ###2. Identify potential shortcomings with your current pipeline
 
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
+The Masked Image masked 
 
 ###3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+Improve Hough 
