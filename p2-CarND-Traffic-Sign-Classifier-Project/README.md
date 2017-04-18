@@ -190,18 +190,26 @@ My final model results were:
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
-I started with Lenet's architecture with no normalization with 
+LeNet-5 is the latest convolutional network designed for handwritten and machine-printed character recognition. I started with Lenet's architecture with  Convolution 3x3. The output was 5, 5, 3, 6. without Image normalization, Max Pooling or Dropouts. 
 * What were some problems with the initial architecture?
+The validation and testing data accuracy was less than 85-90% even though the training accuracy was around 90%. I had to train for the longer duration with many iterations (Epochs > 150). It was time consuming and not accurate.
+* How was the architecture adjusted and why was it adjusted? 
+I added additional layer with output of 5, 5, 3, 12 with the initial Layer. Additional to that I aaded Max pooling along with dropout at multiple layer using an activation function. This was used to reduce overfitting of the data and to improve the accuracy. Apart from that I did normalization of entire training set to improve the efficiency of training data.
 
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 * Which parameters were tuned? How were they adjusted and why?
+Initially I started adding Dropouts followed by Max Pooling. I added Training dataset Normalization to improve overall efficiency.
+
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+Adding the Max Pooling and Dropout helps in overfitting with AdamOptimizer.
 
 If a well known architecture was chosen:
 * What architecture was chosen?
+Lenet's architecture was chosen based on the Latest avaialble architecture for Character recognition.
+
 * Why did you believe it would be relevant to the traffic sign application?
+All Traffic data contains symbols. So the model works well with Symbols
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+The accuracy of the training, validation proved with 20 iterations that the model works well with Traffic Images. 
 
 ###Test a Model on New Images
 
