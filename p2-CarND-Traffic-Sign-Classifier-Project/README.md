@@ -91,10 +91,10 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, valid padding, outputs 28x28x12 	|
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x12 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
-| Convolution 3x3	    | 1x1 stride, valid padding, outputs 10x10x16  |
+| Convolution 5x5	    | 1x1 stride, valid padding, outputs 10x10x16  |
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
 | Flatten	      	| Flatten. Input = 5x5x16. Output = 400. 				|
@@ -126,12 +126,12 @@ My final model results were:
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
-LeNet-5 is the latest convolutional network designed for handwritten and machine-printed character recognition. I started with Lenet's architecture with  Convolution 3x3. The output was 5, 5, 3, 6. without Image normalization, Max Pooling or Dropouts. 
+LeNet-5 is the latest convolutional network designed for handwritten and machine-printed character recognition. I started with Lenet's architecture with  Convolution 5x5. The output was 5, 5, 3, 6. without Image normalization, Max Pooling or Dropouts. 
 * What were some problems with the initial architecture?
 The validation and testing data accuracy was less than 85-90% even though the training accuracy was around 90%. I had to train for the longer duration with many iterations (Epochs > 150). It was time consuming and not accurate.
 
 * How was the architecture adjusted and why was it adjusted? 
-I added additional layer with output of 5, 5, 3, 12 with the initial Layer. Additional to that I aaded Max pooling along with dropout at multiple layer using an activation function. This was used to reduce overfitting of the data and to improve the accuracy. Apart from that I did normalization of entire training set to improve the efficiency of training data.
+I added additional layer with output of 5, 5, 3, 12 with the initial Layer. Additional to that I added Max pooling along with dropout at multiple layer using an activation function. This was used to reduce overfitting of the data and to improve the accuracy. Apart from that I did normalization of entire training set to improve the efficiency of training data.
 
 
 * Which parameters were tuned? How were they adjusted and why?
@@ -156,8 +156,14 @@ The accuracy of the training, validation proved with 20 iterations that the mode
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image12] ![alt text][image13] ![alt text][image14] 
-![alt text][image15] ![alt text][image16] ![alt text][image17]
+![alt text][image12]
+discuss what quality or qualities might be difficult to classify.
+
+![alt text][image13] 
+![alt text][image14] 
+![alt text][image15] 
+![alt text][image16] 
+![alt text][image17]
 
 
 
