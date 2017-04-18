@@ -157,16 +157,21 @@ The accuracy of the training, validation proved with 20 iterations that the mode
 Here are five German traffic signs that I found on the web:
 
  1) discuss what quality or qualities might be difficult to classify.
+ 
+* The image qulaity is good with less noisy and blurriness but with complete white background.
 ![alt text][image12]
- * The image qulaity is good with less noisy and blurriness but with complete white background.
+
+* Image is noisy with green background and darker shades at the bottom of the image. 
 ![alt text][image13] 
- * Image is noisy with green background and darker shades at the bottom of the image. 
+
+* Image is darker with shades at the bottom along with blurriness.
 ![alt text][image14] 
- * Image is darker with shades at the bottom along with blurriness.
+
+* Image has poor visual quality and has darker background with patches at the bottom and has blurriness. 
 ![alt text][image15] 
- * Image has poor visual quality and has darker background with patches at the bottom and has blurriness. 
+
+* Image has gray background with patches at the bottom and has blurriness. 
 ![alt text][image16] 
- * Image has gray background with patches at the bottom and has blurriness. 
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
