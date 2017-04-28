@@ -102,7 +102,7 @@ The final model architecture (model.py lines 109-133) consisted of a convolution
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 66x200x3 RGB image   							| 
 | Normalization         		| 							| 
-| Normalization         		| 	((20,0), (0,0))						| 
+| Cropping         		| 	((20,0), (0,0))						| 
 | Convolution 5x5     	| 2x2 stride, valid padding 	|
 | RELU					|												|
 | Convolution 5x5     	| 2x2 stride, valid padding 	|
@@ -116,7 +116,6 @@ The final model architecture (model.py lines 109-133) consisted of a convolution
 | RELU					|												|
 | Fully connected		| Input = 50. Output = 10.  |
 | RELU					|												|
-| Dropouts					|												|
 | Fully connected		| Input = 10. Output = 1.  |
 
 ####3. Creation of the Training Set & Training Process
