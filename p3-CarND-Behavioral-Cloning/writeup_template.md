@@ -1,9 +1,3 @@
-#**Behavioral Cloning** 
-
-##Writeup Template
-
----
-
 **Behavioral Cloning Project**
 
 The goals / steps of this project are the following:
@@ -16,39 +10,17 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
-
-## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
+[image1]: ./examples/nvidia.png "Nividia Architecture"
+[image2]: ./examples/resized-Image.png "Resized Image"
 
 ---
-###Files Submitted & Code Quality
-
-####1. Submission includes all required files and can be used to run the simulator in autonomous mode
-
 My project includes the following files:
 * model.py containing the script to create and train the model  
 * drive.py for driving the car in autonomous mode
 * model.h5 containing a trained convolution neural network 
 * writeup_report.md or writeup_report.pdf summarizing the results
 
-I used the simualator [dataset](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/584f6edd_data/data.zip) provided by Udacity for training the network.
 
-The Simuator dataset consists of images and a CSV file. Total of 24108 images with size of each image (160,320,3) captured from the 3 cameras mounted on center, left and right of the car. The dataset also contains a CSV file which has metadata about the images.
-
-The metadata consists of Image paths, Steering angle, throttle, break and speed data at various interwals during the training.
-
-The data can be used to directly train the network. However, the data needs augmentation for various scneraios such as sharp turns, shadows, tress etc. 
-
-I used the python CSV functions to read the training data from CSV. I didn't clean up the data and used only resizing. Initially I used CV2 image read function. However, I had difficulties using the simulator. Later I used the approach as suggested in the [link](https://medium.com/@yazeedalrubyli/behavioral-cloning-tiny-mistake-cost-me-15-days-23dd13a3b525)
-
-I started with fit_generator. It was too slow and took hours to train. Rather I used the tradditional approach to store the data in memory which was much faster and more easy to test.
 
 
 ####2. Submission includes functional code
@@ -73,7 +45,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 ####1. An appropriate model architecture has been employed
 
-My model uses [Nividia](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) Architecture with modifications. 
+My model uses [NVidia](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) Architecture with modifications. 
 
 Below is the details on the architecture which I used.
 
@@ -109,23 +81,35 @@ The model was trained and validated on different data sets to ensure that the mo
 
 ####3. Model parameter tuning
 
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 25).
+The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 132).
 
 ####4. Appropriate training data
 
-Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road ... 
+I used the simualator [dataset](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/584f6edd_data/data.zip) provided by Udacity for training the network.
 
-For details about how I created the training data, see the next section. 
+I used the simualator [dataset](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/584f6edd_data/data.zip) provided by Udacity for training the network.
+
+The Simuator dataset consists of images and a CSV file. Total of 24108 images with size of each image (160,320,3) captured from the 3 cameras mounted on center, left and right of the car. The dataset also contains a CSV file which has metadata about the images.
+
+The metadata consists of Image paths, Steering angle, throttle, break and speed data at various interwals during the training.
+
+The data can be used to directly train the network. However, the data needs augmentation for various scneraios such as sharp turns, shadows, tress etc. 
+
+I used the python CSV functions to read the training data from CSV. I didn't clean up the data and used only resizing. Initially I used CV2 image read function. However, I had difficulties using the simulator. Later I used the approach as suggested in the [link](https://medium.com/@yazeedalrubyli/behavioral-cloning-tiny-mistake-cost-me-15-days-23dd13a3b525)
+
 
 ###Model Architecture and Training Strategy
 
 ####1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to ...
+I started with fit_generator. It was too slow and took hours to train. Rather I used the tradditional approach to store the data in memory which was much faster and more easy to test.
 
-My first step was to use a convolution neural network model similar to the ... I thought this model might be appropriate because ...
+My first step was to use a convolution neural network model similar to the Nivida. I chose the model based as a starting point. However, the model is comlicated and I had to reduce the complexity. I removed the additional layers, Max Pooling and Dropouts.
+Even without Max Pooling and Dropouts the network errors were reducing both for training set and Validation set 
 
-In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
+In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set with 
+
+
 
 To combat the overfitting, I modified the model so that ...
 
