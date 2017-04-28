@@ -73,7 +73,31 @@ The model.py file contains the code for training and saving the convolution neur
 
 ####1. An appropriate model architecture has been employed
 
-My model uses Nividia Architecture with modifications. 
+My model uses [Nividia](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) Architecture with modifications. 
+
+Below is the details on the architecture which I used.
+
+
+| Layer         		|     Description	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Input         		| 66x200x3 RGB image   							| 
+| Normalization         		| 							| 
+| Normalization         		| 	((20,0), (0,0))						| 
+| Convolution 5x5     	| 2x2 stride, valid padding 	|
+| RELU					|												|
+| Convolution 5x5     	| 2x2 stride, valid padding 	|
+| RELU					|												|
+| Convolution 5x5     	| 2x2 stride, valid padding 	|
+| RELU					|												|
+| Convolution 3x3	    | 2x2 stride, valid padding  |
+| RELU					|												|
+| Flatten	      	| Flatten. Output = 100. 				|
+| Fully connected		| Input = 100. Output = 50.  |
+| RELU					|												|
+| Fully connected		| Input = 50. Output = 10.  |
+| RELU					|												|
+| Dropouts					|												|
+| Fully connected		| Input = 10. Output = 1.  |
 
 
 
