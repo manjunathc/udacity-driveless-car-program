@@ -13,6 +13,7 @@ The goals / steps of this project are the following:
 [image1]: ./examples/nvidia.png "Nividia Architecture"
 [image2]: ./examples/resized-Image.png "Resized Image"
 [image3]: ./examples/training-output.png "Training Output"
+[image4]: ./examples/final-output.png "Final Output"
 
 
 ---
@@ -91,6 +92,8 @@ Even without Max Pooling and Dropouts the network errors were reducing both for 
 The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track. To improve the driving behavior in these cases, I need to add more augmentation data, with Image transformation and Cleanups.
 
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
+
+![alt text][image4]
 
 ####2. Final Model Architecture
 
