@@ -40,16 +40,30 @@ My project includes the following files:
 
 I used the simualator [dataset](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/584f6edd_data/data.zip) provided by Udacity for training the network.
 
-The Simuator dataset has total of 24108 images images from 3 cameras. Each image size is (160,320,3) captured from the 3 cameras mounted on center, left and right of the car.
+The Simuator dataset consists of images and a CSV file. Total of 24108 images with size of each image (160,320,3) captured from the 3 cameras mounted on center, left and right of the car. The dataset also contains a CSV file which has metadata about the images.
 
-I 
+The metadata consists of Image paths, Steering angle, throttle, break and speed data at various interwals during the training.
+
+The data can be used to directly train the network. However, the data needs augmentation for various scneraios such as sharp turns, shadows, tress etc. 
+
+I used the python CSV functions to read the training data from CSV. I didn't clean up the data and used only resizing. Initially I used CV2 image read function. However, I had difficulties using the simulator. Later I used the approach as suggested in the [link](https://medium.com/@yazeedalrubyli/behavioral-cloning-tiny-mistake-cost-me-15-days-23dd13a3b525)
+
+I started with fit_generator. It was too slow and took hours to train. Rather I used the tradditional approach to store the data in memory which was much faster and more easy to test.
 
 
 ####2. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
-```sh
-python drive.py model.h5
-```
+
+| File                         | Description                                                                        |
+| ---------------------------- | ---------------------------------------------------------------------------------- |
+| `model.py`                    | Source code for reading, data augmentation, prepross, data augmentation and Network.|
+| `drive.py`                   | Implements model architecture and runs the training pipeline.                      |
+| `Model.h5`                 | JSON file containing model architecture in a format Keras understands.             |
+| `drive.py`                   | Model weights.                                                                     |
+| `video_output` | [Youtube Link](https://youtu.be/xakm7k-E9K0) |
+| `drive.py`                   | Implements driving simulator callbacks, essentially communicates with the driving simulator app providing model predictions based on real-time data simulator app is sending. |
+
+
 
 ####3. Submission code is usable and readable
 
@@ -59,9 +73,9 @@ The model.py file contains the code for training and saving the convolution neur
 
 ####1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network with 3x3 filter sizes and depths between 32 and 128 (model.py lines 18-24) 
+My model uses Nividia Architecture with modifications. 
 
-The model includes RELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
+
 
 ####2. Attempts to reduce overfitting in the model
 
@@ -101,9 +115,27 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
 
-Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
 
-![alt text][image1]
+My final model consisted of the following layers:
+
+| Layer         		|     Description	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Input         		| 32x32x3 RGB image   							| 
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x12 	|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
+| Convolution 5x5	    | 1x1 stride, valid padding, outputs 10x10x16  |
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
+| Flatten	      	| Flatten. Input = 5x5x16. Output = 400. 				|
+| Fully connected		| Input = 400. Output = 120.  |
+| RELU					|												|
+| Dropouts					|												|
+| Fully connected		| Input = 120. Output = 84.  |
+| RELU					|												|
+| Dropouts					|												|
+| Fully connected		| Input = 84. Output = 43.  |
+| Softmax				|        									|
 
 ####3. Creation of the Training Set & Training Process
 
