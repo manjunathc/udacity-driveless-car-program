@@ -67,8 +67,6 @@ The model used an adam optimizer, so the learning rate was not tuned manually (m
 
 I used the simualator [dataset](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/584f6edd_data/data.zip) provided by Udacity for training the network.
 
-I used the simualator [dataset](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/584f6edd_data/data.zip) provided by Udacity for training the network.
-
 The Simuator dataset consists of images and a CSV file. Total of 24108 images with size of each image (160,320,3) captured from the 3 cameras mounted on center, left and right of the car. The dataset also contains a CSV file which has metadata about the images.
 
 The metadata consists of Image paths, Steering angle, throttle, break and speed data at various interwals during the training.
@@ -84,7 +82,8 @@ I used the python CSV functions to read the training data from CSV. I didn't cle
 
 I started with fit_generator. It was too slow and took hours to train. Rather I used the tradditional approach to store the data in memory which was much faster and more easy to test.
 
-My first step was to use a convolution neural network model similar to the Nivida. I chose the model based as a starting point. However, the model is comlicated and I had to reduce the complexity. I removed the additional layers, Max Pooling and Dropouts.
+My first step was to use a convolution neural network model similar to the Nivida. I chose the model as a starting point. Soon, I found the model is very comlicated and I had to reduce the layers. I removed the additional layers, Max Pooling and Dropouts.
+
 Even without Max Pooling and Dropouts the network errors were reducing both for training set and Validation set.
 
 ![alt text][image3]
@@ -128,8 +127,6 @@ I used the sample data from Udacity. After resizing below is sample image.
 ![alt text][image2]
 
 To augment the data set, I also flipped images and angles thinking that this would improve the driving of the car. One condition while flipping is to add the correction factor of 0.2.
-
-
 
 I did try shuffling the data. However, there was no improvisation of driving and was adversly affected.
 
