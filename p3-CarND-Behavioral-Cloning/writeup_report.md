@@ -54,9 +54,7 @@ Below is the details of NVidia architecture.
 
 ####2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
-
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+I didnot see any overfitting with the model. Infact, once I added Max Pooling and Dropouts the error rate was high and simulator was not able drive the car.
 
 ####3. Model parameter tuning
 
