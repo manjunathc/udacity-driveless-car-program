@@ -104,7 +104,8 @@ I used the python CSV functions to read the training data from CSV. I didn't cle
 
 I started with fit_generator. It was too slow and took hours to train. Rather I used the tradditional approach to store the data in memory which was much faster and more easy to test.
 
-My first step was to use a convolution neural network model similar to the Nivida. I chose the model based as a starting point. However, the model is comlicated and I had to reduce the complexity.
+My first step was to use a convolution neural network model similar to the Nivida. I chose the model based as a starting point. However, the model is comlicated and I had to reduce the complexity. I removed the additional layers, Max Pooling and Dropouts.
+Even without Max Pooling and Dropouts the network errors were reducing both for training set and Validation set 
 
 In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set with 
 
