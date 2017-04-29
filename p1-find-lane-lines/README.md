@@ -63,15 +63,15 @@ The whole transformation process is described below.
 * Once the function is created, its verified for various image and a a helper fucntion is created.
 * The helper function was applied for Videos.
 
-[linkname1]:White Lane
-
-[linkname2]:Yellow Lane
+### Video White Lane
+[![Video White](./white.mp4)]
+### Video Yellow Lane
+[![Video Yellow](./yellow.mp4)]
 
 
 ###2. Identify potential shortcomings with your current pipeline
 
-The hough line calculation were not accurate. The resulted image and video didn't resememble the sample exmaple video. 
+The current pipeline assumes a brigter images and straight line roads. The pipeline might not work for curved lanes. The pipeline might fall short for blurry images, shadows and night drives. Its doesn't take into accout the weather conditions and 
 
 ###3. Suggest possible improvements to your pipeline
 
-Improve Hough calulation and draw lines functions.
