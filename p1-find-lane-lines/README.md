@@ -5,14 +5,14 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./solidYellowCurve.jpg "solidYellowCurve"
-[image2]: ./grayscale.png "Grayscale"
-[image3]: ./gaussianblur.png "GaussianBlur"
-[image4]: ./canny.png "Canny"
-[image5]: ./masked.png "Masked"
-[image6]: ./hough_lines.png "Houghlines"
-[image7]: ./weighted_image.png "WeightedImage"
-[image8]: ./processed_image.png "Processed Image"
+[image1]: ./test_images/solidYellowCurve.jpg "solidYellowCurve"
+[image2]: ./test_images/grayscale.png "Grayscale"
+[image3]: ./test_images/gaussianblur.png "GaussianBlur"
+[image4]: ./test_images/canny.png "Canny"
+[image5]: ./test_images/masked.png "Masked"
+[image6]: ./test_images/hough_lines.png "Houghlines"
+[image7]: ./test_images/weighted_image.png "WeightedImage"
+[image8]: ./test_images/processed_image.png "Processed Image"
 
 [linkname1]: ./white.mp4
 
