@@ -64,9 +64,9 @@ The whole transformation process is described below.
 * The helper function was applied for Videos.
 
 ### Video White Lane
-[![Video White](./white.mp4)]
+[![Video White](white.mp4)]
 ### Video Yellow Lane
-[![Video Yellow](./yellow.mp4)]
+[![Video Yellow](yellow.mp4)]
 
 
 ###2. Identify potential shortcomings with your current pipeline
