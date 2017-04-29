@@ -65,11 +65,11 @@ The whole transformation process is described below.
 
 ### Video White Lane
 
-![linkname1]
+[linkname1]
 
 ### Video Yellow Lane
 
-![linkname2]
+[linkname2]
 
 
 ###2. Identify potential shortcomings with your current pipeline
