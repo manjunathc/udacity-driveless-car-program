@@ -50,9 +50,9 @@ The whole transformation process is described below.
 * Once the function is created, its verified for various image and a a helper fucntion is created.
 * The helper function was applied for Videos.
 
-[linkname1]: ./white.mp4
+[linkname1]:
 
-[linkname2]: ./yellow.mp4
+[linkname2]:
 
 
 ###2. Identify potential shortcomings with your current pipeline
