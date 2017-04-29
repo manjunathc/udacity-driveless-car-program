@@ -14,9 +14,9 @@ The goals / steps of this project are the following:
 [image7]: ./test_images/weighted_image.png "WeightedImage"
 [image8]: ./test_images/processed_image.png "Processed Image"
 
-!video[White Lane]( ./white.mp4 ){ size=10 }
+[linkname1]( ./white.mp4 )
 
-!video[Yellow Lane]( ./yellow.mp4 ){ size=10 }
+[linkname2]( ./yellow.mp4 )
 
 ---
 
