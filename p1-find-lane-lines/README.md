@@ -74,8 +74,11 @@ The whole transformation process is described below.
 
 ###2. Identify potential shortcomings with your current pipeline
 
-The current pipeline assumes a brigter images and straight line roads. The pipeline might not work for curved lanes. The pipeline might fall short for blurry images, shadows and night drives. Its doesn't take into accout the weather conditions, Color changes etc and assumes a broder daylight for lane detection.
+* The current pipeline assumes a brigter images and straight line roads. 
+* The pipeline might not work for curved lanes. 
+* The pipeline might fall short for blurry images, shadows and night drives. 
+* Pipeline doesn't take into accout the weather conditions, Color changes etc and assumes a broder daylight for lane detection.
 
 ###3. Suggest possible improvements to your pipeline
-One way to improve the pipeline to consider various kinds of images such as blurry, shadows, various colors etc. 
+* One way to improve the pipeline to consider various kinds of images such as blurry, shadows, various colors etc. 
 
