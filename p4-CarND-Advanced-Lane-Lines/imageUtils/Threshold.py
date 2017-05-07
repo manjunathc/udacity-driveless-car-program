@@ -62,6 +62,7 @@ class Threshold(object):
         gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
         
         height, width = gray.shape
+        
         # apply gradient threshold on the horizontal gradient
         sx_binary = self.abs_sobel_thresh(gray, orient='x', sobel_kernel=self.ksize, thresh=(20, 100))
 
@@ -71,7 +72,6 @@ class Threshold(object):
         # combine the gradient and direction thresholds.
         combined_condition = ((sx_binary == 1) & (dir_binary == 1))
 
-        # R & G thresholds so that yellow lanes are detected well.
         color_threshold = 150
         R = img[:,:,0]
         G = img[:,:,1]
