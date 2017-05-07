@@ -61,27 +61,36 @@ I have created following classes for completion of the project. The main python 
 * PlotImgagesVideo.py - This class generates has the pipeline for final video generation
 * Line.py - This class saves intermediate line parameters, calculating curvature and offset.
 
+
+
+## Pipeline (single images)
+
 Below are the set of images that depicts the various pipeline
 
-### Chessboard Image ###
+
+### 1. Provide an example of a distortion-corrected image.
+
+#### Chessboard Image ####
 ![alt text][image11]
 
-### Chessboard with Corners ###
+#### Chessboard with Corners ####
 ![alt text][image1]
 ![alt text][image2]
 ![alt text][image3]
 
-
-### Pipeline (single images)
-
-#### 1. Provide an example of a distortion-corrected image.
-
-To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-
-### Distorted - Undistorted Images. Side-By-Side ###
+#### Distorted - Undistorted Images. Side-By-Side ####
 ![alt text][image14]
 ![alt text][image4]
 
+#### Histogram Window. Side-By-Side ####
+![alt text][image7]
+
+#### Sliding Window. Side-By-Side ####
+![alt text][image8]
+![alt text][image9]
+
+#### Final Display Image - With Curvature and offset ####
+![alt text][image10]
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
