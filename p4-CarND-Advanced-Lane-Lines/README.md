@@ -1,9 +1,5 @@
 ## Writeup Template
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Advanced Lane Finding Project**
 
 The goals / steps of this project are the following:
@@ -19,13 +15,21 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/undistort_output.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
-[video1]: ./project_video.mp4 "Video"
+[image1]: ./output_images/chessboardcorner-image1.png "Chessboard Image1"
+[image2]: ./output_images/chessboardcorner-image2.png "Chessboard Image2"
+[image3]: ./output_images/chessboardcorner-image3.png "Chessboard Image3"
+[image4]: ./output_images/original_distorted.png "Original and Undistorted Image - SideBySide"
+[image5]: ./output_images/original_undistorted.png "Original Undistorted - After Calibration"
+[image6]: ./output_images/warped.png "Warped (Birds View)"
+[image7]: ./output_images/histogram.png "Histogram"
+[image8]: ./output_images/sliding_window.png "Sliding Window"
+[image9]: ./output_images/sliding_window2.png "Sliding Window - Subsequent frames"
+[image10]: ./output_images/final_display.png "Final Display Image"
+[image11]: ./chess_calibration_images/calibration3.jpg "Non Calibrated Images"
+[image12]: ./chess_calibration_images/test_images/test1.jpg "Test Image for Visualization"
+[image13]: ./chess_calibration_images/test_images/test1.jpg "Another Image for Visualization"
+[video1]: ./output_final_project.mp4 "Project Video"
+[video2]: ./output_final_project_challenge.mp4 "Challenge Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 
