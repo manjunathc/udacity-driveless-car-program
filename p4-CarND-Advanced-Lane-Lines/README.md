@@ -172,5 +172,8 @@ Youtube Link [Challenge Video](https://www.youtube.com/watch?v=-pgAdfJtLdk)
 ### Discussion
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+Mainly I used all techniques as per the Udacity Videos. However, the had issues especially with the threshold calulation. The videos has very limited inputs on calculation of threshold. I referred few github links and following link to get more prespective.
+https://chatbotslife.com/advanced-lane-line-project-7635ddca1960
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+Even with these links, the challenging videos had issues and not proper. Appreciate some help.
+
