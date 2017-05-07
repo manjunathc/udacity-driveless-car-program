@@ -36,16 +36,41 @@ The goals / steps of this project are the following:
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
 ---
-
-### Writeup / README
-
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/udacity/CarND-Advanced-Lane-Lines/blob/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
-
-You're reading it!
-
 ### Camera Calibration
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
+
+I have created following classes for completion of the project. The main python notebook depicts the execution of the code in the following order
+
+1. Calibrate the images using Chessboard corners and save the object points/Images points
+2. Use test images for testing Undistortion, threshold, Binarywarped, histogram, Sliding Window and Display images
+3. Verify the process for various images and calibrate accordingly
+4. Create a pipeline for Images/Vides
+5. Create a video using the pipeline
+6. Test the pipeline for various Challenging videos.
+
+* Final_project_submission - Main iPython Notebook for the execution
+* CalibrationImages.py - The class has methods for identifying Chessboard Image corners, camera calibration, undistort and Binary Warped Images 
+* Threshold.py - This class has methods for Threshold Calculation. 
+    * Sobel Threshold
+    * Magnitude Threshold
+    * Direction of Gradient
+    * Combined Threshold
+* PlotImages.py - The class has methods for calculation and plotting of histogram, warped Image, Sliding window and Final Display
+* PlotImgagesVideo.py - This class generates has the pipeline for final video generation
+* Line.py - This class saves intermediate line parameters, calculating curvature and offset.
+
+Below are the set of images that depicts the various pipeline
+
+### Chessboard Image ###
+![alt text][image11]
+
+### Chessboard with Corners ###
+![alt text][image1]
+![alt text][image2]
+![alt text][image3]
+
+
 
 The code for this step is contained in the first code cell of the IPython notebook located in "./examples/example.ipynb" (or in lines # through # of the file called `some_file.py`).  
 
@@ -60,7 +85,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 #### 1. Provide an example of a distortion-corrected image.
 
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-![alt text][image2]
+![alt text][image1]
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
