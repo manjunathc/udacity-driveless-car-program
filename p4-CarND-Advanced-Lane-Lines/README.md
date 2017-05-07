@@ -147,11 +147,11 @@ Then I did some other stuff and fit my lane lines with a 2nd order polynomial ki
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+I implemented these step in lines 39 through 49 in my code in `imageutils/Line.py` in the function `ln_get_curvature()`, `ln_get_offset_from_center()`  for calulating curvature and offset respectively. 
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in my code in `Line.py` in the function `ln_get_curvature()`, `ln_get_offset_from_center()`  for calulating curvature and offset respectively.  Here is an example of my result on a test image:
+ Here is an example of my result on a test image:
 
 ![alt text][image10]
 
@@ -172,8 +172,8 @@ Youtube Link [Challenge Video](https://www.youtube.com/watch?v=-pgAdfJtLdk)
 ### Discussion
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
-Mainly I used all techniques as per the Udacity Videos. However, the had issues especially with the threshold calulation. The videos has very limited inputs on calculation of threshold. I referred few github links and following link to get more prespective.
+Mainly I used all techniques as per the Udacity Videos. However, I had issues especially with the threshold calulation. The videos has very limited inputs on calculation of threshold. I referred few github links and following link to get more prespective.
 https://chatbotslife.com/advanced-lane-line-project-7635ddca1960
 
-Even with these links, the challenging videos had issues and not proper. Appreciate some help.
+Even with these , the challenging videos had issues. Appreciate some help around these
 
