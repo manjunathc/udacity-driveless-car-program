@@ -1,15 +1,11 @@
-##Writeup Template
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
-**Vehicle Detection Project**
+# Vehicle Detection Project
 
 The goals / steps of this project are the following:
 
+* Download the labeled Car and Non images from Udacity links
+* Rename the images
+* Shuffle and Normalize the images
 * Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a classifier Linear SVM classifier
-* Optionally, you can also apply a color transform and append binned color features, as well as histograms of color, to your HOG feature vector. 
-* Note: for those first two steps don't forget to normalize your features and randomize a selection for training and testing.
 * Implement a sliding-window technique and use your trained classifier to search for vehicles in images.
 * Run your pipeline on a video stream (start with the test_video.mp4 and later implement on full project_video.mp4) and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
 * Estimate a bounding box for vehicles detected.
@@ -28,31 +24,49 @@ The goals / steps of this project are the following:
 [image11]: ./output_images/sliding-window.png
 [image12]: ./output_images/heatmap.png
 [image13]: ./output_images/heatmap2.png
+[image14]: ./output_images/non-car-image1.png
 [video1]: ./output_final_project_Final_ver2.mp4
 
-
-
-## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
-###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
-
----
-###Writeup / README
-
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/udacity/CarND-Vehicle-Detection/blob/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
-
-You're reading it!
 
 ###Histogram of Oriented Gradients (HOG)
 
 ####1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
-The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `some_file.py`).  
+I have created following classes for completion of the project. The main python notebook depicts the execution of the code in the following order
 
-I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
+1. Read the images from the directory and rename/store the images.
+2. Display the car and non car images.
+3. Display the hog Visualization of the car and non-car images 
+4. Shuffle the car and non-car images randomly.
+5. Preprossesing - Use Feature Extraction, Normalize, Create Training and test set.
+6. Train Support Vector Machine Classifier and calculate the score
+7. Store the values in pickle file.
+8. Apply the Classifier to set of images, create a heat map to remove mutliple windows and False positives
+9. Run the classifier on the pipeline video
 
+### Classes Used in the project ###
+* project-p5-final-Submission - Main iPython Notebook for the execution
+* utils/ApplyClassifier.py - The class has method for creating pipeline for single image, video frmaes
+* utils/FeatureExtractorUtil.py - This class has methods for finding features in images
+    * get_hog_features - HOG Feature Extraction
+    * bin_spatial - Function to compute binned color features 
+    * color_hist - Function to compute binned color features
+    * extract_features - function to extract features from a list of images
+    * slide_window - Sliding Window Creation
+    * draw_boxes - Function to draw bounding boxes
+    
+* utils/Smoothening.py - The class has methods for heat Mat Creation
+* utils/Classifier.py - This class has methods for Standardization and Support Vectory classifier training and score
+
+##### Car Images #####
 ![alt text][image1]
+![alt text][image2]
 
-I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
+##### Car Images #####
+![alt text][[image14]]
+
+
+I then explored different color spaces and different `get_hog_features.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
 
 Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
 
@@ -84,8 +98,7 @@ Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spat
 
 ### Video Implementation
 
-####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./output_final_project_Final_ver2.mp4)
 
 
 ####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
