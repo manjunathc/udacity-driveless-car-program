@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 [image6]: ./output_images/car-hog-side-by-side2.png
 [image7]: ./output_images/car-hog-side-by-side3.png
 [image8]: ./output_images/car-hog-side-by-side4.png
-[image9]: ./output_images/box-mulitple4.png
+[image9]: ./output_images/box-mulitple.png
 [image10]: ./output_images/box.png
 [image11]: ./output_images/sliding-window.png
 [image12]: ./output_images/heatmap.png
@@ -109,14 +109,16 @@ I decided to search random window positions at random scales all over the image 
 ![alt text][image3]
 
 ####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
+
 ![alt text][image9]
 ![alt text][image10]
 ![alt text][image12]
-![alt text][image13]
+
 
 Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  
 
 Here are some example images:
+![alt text][image13]
 ![alt text][image10]
 
 ### Video Implementation
