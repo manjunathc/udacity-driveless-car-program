@@ -114,14 +114,15 @@ I decided to search random window positions at random scales all over the image 
 ![alt text][image12]
 ![alt text][image13]
 
-Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
+Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  
+
+Here are some example images:
 ![alt text][image10]
----
 
 ### Video Implementation
 
 Here's a [link to my video result](./output_final_project_Final_ver2.mp4)
-Youtube Link [Final Display Video](https://www.youtube.com/watch?v=HmuTQVL8IUc)
+Youtube Link [Final Display Video](https://www.youtube.com/watch?v=UmqTIQ1BcnY)
 
 ####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
@@ -130,6 +131,7 @@ I recorded the positions of positive detections in each frame of the video.  Fro
 Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
 
 ### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
+
 ![alt text][image16]
 ![alt text][image17]
 ![alt text][image18]
@@ -146,4 +148,11 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 The pipleine had many False poitives with Advanced Lane Detection Video Pipeline. Adding more data to the training and test set and improving the sliding window function could reduce the false positives.
 
-![alt text][image20]
+![alt text][image20].
+
+I reffered following links for more details.
+https://www.learnopencv.com/image-recognition-and-object-detection-part1/
+
+https://chatbotslife.com/vehicle-detection-and-tracking-using-computer-vision-baea4df65906
+
+
