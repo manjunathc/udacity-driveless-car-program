@@ -25,12 +25,16 @@ The goals / steps of this project are the following:
 [image12]: ./output_images/heatmap.png
 [image13]: ./output_images/heatmap2.png
 [image14]: ./output_images/non-car-image1.png
+[image15]: ./output_images/non-car-image4.png
+[image16]: ./output_images/heatmap3.png
+[image17]: ./output_images/heatmap4.png
+[image18]: ./output_images/heatmap5.png
+[image19]: ./output_images/heatmap6.png
+[image20]: ./output_images/false-positive.png
 [video1]: ./output_final_project_Final_ver2.mp4
 
 
-###Histogram of Oriented Gradients (HOG)
 
-####1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
 I have created following classes for completion of the project. The main python notebook depicts the execution of the code in the following order
 
@@ -58,48 +62,66 @@ I have created following classes for completion of the project. The main python 
 * utils/Smoothening.py - The class has methods for heat Mat Creation
 * utils/Classifier.py - This class has methods for Standardization and Support Vectory classifier training and score
 
+###Histogram of Oriented Gradients (HOG)###
+
 ##### Car Images #####
 ![alt text][image1]
 ![alt text][image2]
 
 ##### Non Car Images #####
 ![alt text][image14]
+![alt text][image15]
 
+The first step in image classification is to simplify the image by extracting the important information contained in the image and leaving out the rest. A feature descriptor is a representation of an image or an image patch that simplifies the image by extracting useful information and throwing away extraneous information. 
 
-I then explored different color spaces and different `get_hog_features.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
+I then explored different color spaces and different `get_hog_features.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  
+I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like for Cars.
 
 Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
 
-
-![alt text][image2]
+![alt text][image5]
+![alt text][image6]
 
 ####2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters and...
+HOG feature extraction  converts an image of fixed size to a feature vector of fixed size. I used below configuration for Hog Feature Extraction.
+
+* color_space='YCrCb' - Tried various color spaces such as 'RGB', HSV, LUV, HLS, YUV. 
+* spatial_size=(32, 32) -
+* hist_bins=32
+* orient=9
+* pix_per_cell=8
+* cell_per_block=2
+* hog_channel='ALL'
 
 ####3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using...
+I trained a linear SVM using SVC. The `Classifier.SVC_Normalize` uses the SVC and train the classifier.
 
 ###Sliding Window Search
 
 ####1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
+I decided to search random window positions at random scales all over the image and came up with this. The following code has the details.
+
+ `FeatureExtractionUtil.slide_window`
 
 ![alt text][image3]
 
 ####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
+![alt text][image9]
+![alt text][image10]
+![alt text][image12]
+![alt text][image13]
 
 Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
-
-![alt text][image4]
+![alt text][image10]
 ---
 
 ### Video Implementation
 
 Here's a [link to my video result](./output_final_project_Final_ver2.mp4)
-
+Youtube Link [Final Display Video](https://www.youtube.com/watch?v=HmuTQVL8IUc)
 
 ####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
@@ -107,17 +129,14 @@ I recorded the positions of positive detections in each frame of the video.  Fro
 
 Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
 
-### Here are six frames and their corresponding heatmaps:
-
-![alt text][image5]
-
 ### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
-![alt text][image6]
+![alt text][image16]
+![alt text][image17]
+![alt text][image18]
+![alt text][image19]
 
 ### Here the resulting bounding boxes are drawn onto the last frame in the series:
-![alt text][image7]
-
-
+![alt text][image10]
 
 ---
 
@@ -125,5 +144,6 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+The pipleine had many False poitives with Advanced Lane Detection Video Pipeline. Adding more data to the training and test set and improving the sliding window function could reduce the false positives.
 
+![alt text][image20]
