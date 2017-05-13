@@ -62,8 +62,8 @@ I have created following classes for completion of the project. The main python 
 ![alt text][image1]
 ![alt text][image2]
 
-##### Car Images #####
-![alt text][[image14]]
+##### Non Car Images #####
+![alt text][image14]
 
 
 I then explored different color spaces and different `get_hog_features.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
