@@ -40,6 +40,7 @@ The goals / steps of this project are the following:
         * P - Uncertinity Covariance
         * HT - H Transpose
         * Sinv - S Inverse
+  
 
 * The Daiagram below depicts the Kalman Filter alogrithm.
 
@@ -51,11 +52,12 @@ I have used starter code provided from the Udacity for completion of the project
 1. Setup the project.
 2. Update the tools.cpp to Calculate RMSE and Jacobian Matrix
 3. Update the fusion.h and fusion.cpp to add the necessary functions and initializations.
-4. Calculate RMSE, Velocity and Poistion using Radar only.
+4. Update kalman_filter.cpp with Predict(), Update and UpdateEKF() funcitons.
+5. Calculate RMSE, Velocity and Poistion using Radar only.
 ![alt text][image3]
-5. Calculate RMSE, Velocity and Poistion using Lidar only.
+6. Calculate RMSE, Velocity and Poistion using Lidar only.
 ![alt text][image2]
-6. Calculate RMSE, Velocity and Poistion using both sensors (Radar and Lidar).
+7. Calculate RMSE, Velocity and Poistion using both sensors (Radar and Lidar).
 ![alt text][image1]
 
 
