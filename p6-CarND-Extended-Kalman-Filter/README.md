@@ -54,7 +54,7 @@ I have used starter code provided from the Udacity for completion of the project
 ![alt text][image3]
 5. Calculate RMSE, Velocity and Poistion using Lidar only.
 ![alt text][image2]
-6. 5. Calculate RMSE, Velocity and Poistion using both sensors (Radar and Lidar).
-![alt text][image4]
+6. Calculate RMSE, Velocity and Poistion using both sensors (Radar and Lidar).
+![alt text][image1]
 
 
