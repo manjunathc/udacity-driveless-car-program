@@ -23,22 +23,23 @@ The goals / steps of this project are the following:
       * P1 = F * P * FT + Q
 
   * Measurement Update:
-      * y = z − Hx0
-      * S = H*P0*HT + R
-      * K = P0*HT*Sinv
+      * y = z − H * x
+      * S = H * P0 * HT + R
+      * K = P0 * HT * Sinv
       * x = x0 + Ky
       * P = (I − KH)P0
 
-      * x -  Previous Estimate
-      * x1 - Current Estimate
-      * F - State Transistion Matrix
-      * U - Motion Vector (Zero in the current Scneraio becuase we will not know the internal state of Bicycle)
-      * z - Measurement
-      * H - Measurement Function
-      * R - Measurement Noise ()
-      * I - Identity Matrix
-      * P - Uncertinity Covariance
-      * HT - H Transpose
+        * x -  Previous Estimate
+        * x1 - Current Estimate
+        * F - State Transistion Matrix
+        * U - Motion Vector (Zero in the current Scneraio becuase we will not know the internal state of Bicycle)
+        * z - Measurement
+        * H - Measurement Function
+        * R - Measurement Noise ()
+        * I - Identity Matrix
+        * P - Uncertinity Covariance
+        * HT - H Transpose
+        * Sinv - S Inverse
 
 * The Daiagram below depicts the Kalman Filter alogrithm.
 
