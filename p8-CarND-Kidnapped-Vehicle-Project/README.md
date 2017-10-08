@@ -1,46 +1,31 @@
-# Unscented Kalman Filters Project
+# Udacity Kidnapped Vehicle Project
 Self-Driving Car Engineer Nanodegree Program
 
 [//]: # (Image References)
-[image1]: ./output_images/No_Tuning.png
-[image2]: ./output_images/Radar_Only.png
-[image3]: ./output_images/Lidar_Only.png
-[image4]: ./output_images/Tuned.png
-[image5]: ./output_images/UKF_Roadmap.png
+[image1]: ./output_images/particle_filter_algorithm.png
+[image2]: ./output_images/success.png
+[
 
 
-* A standard Kalman filter can only handle linear equations. Both the extended Kalman filter and the unscented Kalman filter allow you to use non-linear equations; the difference between EKF and UKF is how they handle non-linear equations. 
+* Particle filter is used to localize a self driving car. This project helps in finding the robot that has been kidnapped. 
 
 
 The goals / steps of this project are the following:
 
-* Utilize a unscented Kalman filter using the CTRV motion model to estimate the state of a moving object with complex turns and with noisy lidar and radar measurements
-* The moving object is a bicycle that travels around the vehicle.
-* The simulated data is already provided.
-* Unscented Kalman filter Kalman Filter will be used to track the bicycle's position and velocity.
-    * Initialization - The initialization process requires to tune the process noise and measurement noise, State Vector, Covariance Matrix, etc
-    * Prediction - Process of Generating sigma Points, Predict Sigma Points and Predict Mean and Co-variance
-    * Update - Predict Meaurement and Update the state.
+* Two Dimensional particle filter needs to be implemented with initial a (noisy) GPS estimate, and a noisy sensor and control data. At each time step your filter will also get observation and control data.
+
   
 
-* The Daiagram below depicts the Unscented Kalman Filter alogrithm.
+* The Daiagram below depicts the particle Kalman Filter alogrithm.
 
-![alt text][image5]
+![alt text][image1]
 
 
 I have used starter code provided from the Udacity for completion of the project.
 
 1. Setup the project.
-2. Update the tools.cpp to Calculate RMSE
-3. Update the UKF.h and UKF.cpp to add the necessary functions and initializations.
-4. Update kalman_filter.cpp with ProcessMeasurement(), Prediction, UpdateRadar and UpdateLidar() funcitons.
-5. Calculate RMSE, Velocity and Poistion without Tuning Parameters.
-![alt text][image1]
-5. Calculate RMSE, Velocity and Poistion using Radar only.
+2. Update the particle_filter.cpp to add Initialization, Prediction, Update Weights and Resample functions.
+3. Run the simuator to see "Sucess message" within 100 secs.
 ![alt text][image2]
-6. Calculate RMSE, Velocity and Poistion using Lidar only.
-![alt text][image3]
-7. Calculate RMSE, Velocity and Poistion using both sensors (Radar and Lidar).
-![alt text][image4]
 
 
