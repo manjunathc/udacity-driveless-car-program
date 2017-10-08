@@ -4,8 +4,6 @@ Self-Driving Car Engineer Nanodegree Program
 [//]: # (Image References)
 [image1]: ./output_images/particle_filter_algorithm.png
 [image2]: ./output_images/success.png
-[
-
 
 * Particle filter is used to localize a self driving car. This project helps in finding the robot that has been kidnapped. 
 
