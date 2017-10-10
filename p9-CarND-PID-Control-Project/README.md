@@ -1,29 +1,27 @@
-# Udacity Kidnapped Vehicle Project
+# Udacity PID Controller Project
 Self-Driving Car Engineer Nanodegree Program
 
-[//]: # (Image References)
-[image1]: ./output_images/particle_filter_algorithm.png
-[image2]: ./output_images/success.png
-
-* Particle filter is used to localize a self driving car. This project helps in finding the robot that has been kidnapped. 
+* In this project, I have used PID controller to maneuver the vehicle around the track. The simulator will provide you the cross track error (CTE) and the velocity (mph) in order to compute the appropriate steering angle. 
 
 
 The goals / steps of this project are the following:
 
-* Two Dimensional particle filter needs to be implemented with initial a (noisy) GPS estimate, and a noisy sensor and control data. At each time step your filter will also get observation and control data.
-
-  
-
-* The Daiagram below depicts the particle Kalman Filter alogrithm.
-
-![alt text][image1]
+* Maneuver the vehicle around the track.
+* I have used two PID contollers with one controlling the Steering Value and other for Speed.
+* The hyper parameters have been set to both the contollers.
+* Cross Track Error(CTE) and Speed error are calculated with the respective formula..
+* With two PID controllers, I was able to Maneuver the vehicle without going off the track. Twiddle was not needed for this project.
 
 
 I have used starter code provided from the Udacity for completion of the project.
 
 1. Setup the project.
-2. Update the particle_filter.cpp to add Initialization, Prediction, Update Weights and Resample functions.
-3. Run the simuator to see "Sucess message" within 100 secs.
-![alt text][image2]
+2. Update the PID.cpp for calulations and main.cpp to invoke PID, to calulate the Cross Track Error, Speed Error, Steering Value and Throttle.
+3. Run the simuator to capture the simulator Video.
+
+Below is the video 
+
+[PID Controller] https://youtu.be/cN4xRQOgbTA
+
 
 
