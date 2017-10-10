@@ -1,7 +1,7 @@
 # Udacity PID Controller Project
 Self-Driving Car Engineer Nanodegree Program
 
-* In this project, I have used PID controller to maneuver the vehicle around the track. The simulator will provide you the cross track error (CTE) and the velocity (mph) in order to compute the appropriate steering angle. 
+* In this project, I have used PID controller to maneuver the vehicle around the track. The simulator will provide the cross track error (CTE) and the velocity (mph) in order to compute the appropriate steering angle. 
 
 
 The goals / steps of this project are the following:
