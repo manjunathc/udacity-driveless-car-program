@@ -71,7 +71,7 @@ Ki is the integral gain. The integral term accelerates the movement of the proce
 ## Rubric Point : Describe how the final hyperparameters were chosen: 
 **Student discusses how they chose the final hyperparameters (P, I, D coefficients). This could be have been done through manual tuning, twiddle, SGD, or something else, or a combination!**
 
-I used manual tuning approach as described in [Ziegler–Nichols] https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method method.
+I used manual tuning approach as described in [Ziegler–Nichols] https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method
 
 ### First kept Ki and Kd to zero. Below is the video at Kp=0.3
 [PID Controller with High Kp oscillations and Zero Ki,Kd] 
