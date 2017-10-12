@@ -17,6 +17,8 @@ The goals / steps of this project are the following:
 I have used starter code provided from the Udacity for completion of the project.
 
 ## Rubric Point : Describe the effect each of the P, I, D components had in your implementation.
+**I have created Videos for each values**
+
 
 I have used two PID contollers with one controlling the Steering Value and other for Speed. I have set the maximum speed for 50mph for CTE = 0. I manually tuned the parameters for both PID controllers.
 
