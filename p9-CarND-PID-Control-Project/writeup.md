@@ -64,22 +64,22 @@ The integral in a PID controller is the sum of the instantaneous error over time
 
 Ki is the integral gain. The integral term accelerates the movement of the process towards setpoint and eliminates the residual steady-state error that occurs with a pure proportional controller. It mainly used to reduce the systematic Bias(Big Cross Track Error(CTE)).
 
-##Rubric Point : Describe how the final hyperparameters were chosen:
+## Rubric Point : Describe how the final hyperparameters were chosen:
 
 I used manaul tuning approach as described in [Ziegler–Nichols] https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method method.
 
-###First kept Ki and Kd to zero. Below is the video at Kp=0.3
+### First kept Ki and Kd to zero. Below is the video at Kp=0.3
 [PID Controller with High Kp oscillations and Zero Ki,Kd] https://youtu.be/Xw4pIwU0PVc
 
-###Next, I modifed the value of Ki = 0.0001 and Kd = 3.0. Modified Kp from 0.1 to 0.2 and 0.3. At 0.3 it started oscillating and reduced at 0.1
+### Next, I modifed the value of Ki = 0.0001 and Kd = 3.0. Modified Kp from 0.1 to 0.2 and 0.3. At 0.3 it started oscillating and reduced at 0.1
 Below is the video for high Kp of 0.3
 
 [PID Controller with High Kp oscillations] https://youtu.be/PQmTFTotB78
 
-###Below is the video for Low Kp of 0.0 = This causes a big CTE. Please see the below Video.
+### Below is the video for Low Kp of 0.0 = This causes a big CTE. Please see the below Video.
 [PID Controller with Zero KD oscillations] https://youtu.be/6z3T3TSD_J4
 
-###Below is the video for high Ki = 0.1 which causes Overshoots.
+### Below is the video for high Ki = 0.1 which causes Overshoots.
 [PID Controller with Ki = 0.1] https://youtu.be/0aCd7cLq378
 
 1. The gains were found better with
@@ -106,7 +106,7 @@ Project Details:
 2. Update the PID.cpp for calulations and main.cpp to invoke PID, to calulate the Cross Track Error, Speed Error, Steering Value and Throttle.
 3. Run the simuator to capture the simulator Video.
 
-###Final Video - with Succesful tuning of parameters.
+### Final Video - with Succesful tuning of parameters.
 
 [PID Controller] https://youtu.be/cN4xRQOgbTA
 
