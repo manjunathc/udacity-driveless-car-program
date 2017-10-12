@@ -18,7 +18,8 @@ I have used starter code provided from the Udacity for completion of the project
 
 ## Rubric Point : Describe the effect each of the P, I, D components had in your implementation.
 
-**Student describes the effect of the P, I, D component of the PID algorithm in their implementation. Is it what you expected?Visual aids are encouraged, i.e. record of a small video of the car in the simulator and describe what each component is set to.**
+**Student describes the effect of the P, I, D component of the PID algorithm in their implementation. Is it what you expected? 
+Visual aids are encouraged, i.e. record of a small video of the car in the simulator and describe what each component is set to.**
 
 **Videos are created for each values**
 
