@@ -22,9 +22,7 @@ I have used starter code provided from the Udacity for completion of the project
 
 ## Rubric Point : Your code should compile.
 
-** Code must compile without errors with cmake and make.
-
-Given that we've made CMakeLists.txt as general as possible, it's recommend that you do not change it unless you can guarantee that your changes will still compile on any platform. **
+**Code must compile without errors with cmake and make. Given that we've made CMakeLists.txt as general as possible, it's recommend that you do not change it unless you can guarantee that your changes will still compile on any platform. **
 
 * Code is compiled as per the screen shot below and CMakeLists.txt is generic.
 
