@@ -98,7 +98,7 @@ Rubric
 
 Simulation
 
-##CRITERIA : The vehicle must successfully drive a lap around the track.
+##CRITERIA : The vehicle must successfully drive a lap around the track.##
 
 Project Details:
 1. Setup the project.
