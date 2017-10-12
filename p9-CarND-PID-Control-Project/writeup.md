@@ -17,8 +17,10 @@ The goals / steps of this project are the following:
 I have used starter code provided from the Udacity for completion of the project.
 
 ## Rubric Point : Describe the effect each of the P, I, D components had in your implementation.
-**I have created Videos for each values**
 
+**Student describes the effect of the P, I, D component of the PID algorithm in their implementation. Is it what you expected?Visual aids are encouraged, i.e. record of a small video of the car in the simulator and describe what each component is set to.**
+
+**Videos are created for each values**
 
 I have used two PID contollers with one controlling the Steering Value and other for Speed. I have set the maximum speed for 50mph for CTE = 0. I manually tuned the parameters for both PID controllers.
 
@@ -65,7 +67,8 @@ The integral in a PID controller is the sum of the instantaneous error over time
 
 Ki is the integral gain. The integral term accelerates the movement of the process towards setpoint and eliminates the residual steady-state error that occurs with a pure proportional controller. It mainly used to reduce the systematic Bias(Big Cross Track Error(CTE)).
 
-## Rubric Point : Describe how the final hyperparameters were chosen:
+## Rubric Point : Describe how the final hyperparameters were chosen: 
+**Student discusses how they chose the final hyperparameters (P, I, D coefficients). This could be have been done through manual tuning, twiddle, SGD, or something else, or a combination!**
 
 I used manual tuning approach as described in [Ziegler–Nichols] https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method method.
 
