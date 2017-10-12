@@ -1,6 +1,10 @@
 # Udacity PID Controller Project
 Self-Driving Car Engineer Nanodegree Program
 
+[//]: # (Image References)
+[image1]: ./output_images/compiled_code.png
+[image2]: ./output_images/generic_cmake_list.png
+
 * In this project, I have used PID controller to maneuver the vehicle around the track. The simulator will provide the cross track error (CTE) and the velocity (mph) in order to compute the appropriate steering angle. 
 
 
@@ -15,6 +19,21 @@ The goals / steps of this project are the following:
 
 
 I have used starter code provided from the Udacity for completion of the project.
+
+## Rubric Point : Your code should compile.
+
+**Code must compile without errors with cmake and make.
+
+Given that we've made CMakeLists.txt as general as possible, it's recommend that you do not change it unless you can guarantee that your changes will still compile on any platform.**
+
+* Code is compiled as per the screen shot below and CMakeLists.txt is generic.
+
+![alt text][image1]
+
+
+![alt text][image2]
+
+
 
 ## Rubric Point : Describe the effect each of the P, I, D components had in your implementation.
 
@@ -112,9 +131,9 @@ Rubric
 
 Simulation
 
-## CRITERIA : The vehicle must successfully drive a lap around the track.
+## CRITERIA : The vehicle must successfully drive a lap around the track. No tire may leave the drivable portion of the track surface. The car may not pop up onto ledges or roll over any surfaces that would otherwise be considered unsafe (if humans were in the vehicle).
 
-Project Details:
+Project Details: 
 1. Setup the project.
 2. Update the PID.cpp for calulations and main.cpp to invoke PID, to calulate the Cross Track Error, Speed Error, Steering Value and Throttle.
 3. Run the simuator to capture the simulator Video.
