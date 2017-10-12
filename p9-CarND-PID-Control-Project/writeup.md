@@ -16,7 +16,7 @@ The goals / steps of this project are the following:
 
 I have used starter code provided from the Udacity for completion of the project.
 
-##Rubric Point : Describe the effect each of the P, I, D components had in your implementation.
+## Rubric Point : Describe the effect each of the P, I, D components had in your implementation.
 
 I have used two PID contollers with one controlling the Steering Value and other for Speed. I have set the maximum speed for 50mph for CTE = 0. I manually tuned the parameters for both PID controllers.
 
@@ -98,7 +98,7 @@ Rubric
 
 Simulation
 
-##CRITERIA : The vehicle must successfully drive a lap around the track.##
+## CRITERIA : The vehicle must successfully drive a lap around the track.
 
 Project Details:
 1. Setup the project.
