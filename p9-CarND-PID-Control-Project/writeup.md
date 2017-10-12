@@ -74,18 +74,26 @@ Ki is the integral gain. The integral term accelerates the movement of the proce
 I used manual tuning approach as described in [Ziegler–Nichols] https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method method.
 
 ### First kept Ki and Kd to zero. Below is the video at Kp=0.3
-**PID Controller with High Kp oscillations and Zero Ki,Kd** https://youtu.be/Xw4pIwU0PVc
+[PID Controller with High Kp oscillations and Zero Ki,Kd] 
+
+https://youtu.be/Xw4pIwU0PVc
 
 ### Next, I modifed the value of Ki = 0.0001 and Kd = 3.0. Modified Kp from 0.1 to 0.2 and 0.3. At 0.3 it started high oscillations.
 Below is the video for high Kp of 0.3
 
-[PID Controller with High Kp oscillations] https://youtu.be/PQmTFTotB78
+[PID Controller with High Kp oscillations] 
+
+https://youtu.be/PQmTFTotB78
 
 ### Below is the video for Low Kp of 0.0 = This causes a big CTE. Please see the below Video.
-[PID Controller with Zero KD oscillations] https://youtu.be/6z3T3TSD_J4
+[PID Controller with Zero KD oscillations] 
+
+https://youtu.be/6z3T3TSD_J4
 
 ### Below is the video for high Ki = 0.1 which causes Overshoots.
-[PID Controller with Ki = 0.1] https://youtu.be/0aCd7cLq378
+[PID Controller with Ki = 0.1] 
+
+https://youtu.be/0aCd7cLq378
 
 1. The gains were found better with
   Kp = 0.1;
