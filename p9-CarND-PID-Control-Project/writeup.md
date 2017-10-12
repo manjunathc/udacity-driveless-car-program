@@ -70,7 +70,7 @@ I used manual tuning approach as described in [Ziegler–Nichols] https://en.wik
 ### First kept Ki and Kd to zero. Below is the video at Kp=0.3
 [PID Controller with High Kp oscillations and Zero Ki,Kd] https://youtu.be/Xw4pIwU0PVc
 
-### Next, I modifed the value of Ki = 0.0001 and Kd = 3.0. Modified Kp from 0.1 to 0.2 and 0.3. At 0.3 it started oscillating and reduced at 0.1
+### Next, I modifed the value of Ki = 0.0001 and Kd = 3.0. Modified Kp from 0.1 to 0.2 and 0.3. At 0.3 it started high oscillations.
 Below is the video for high Kp of 0.3
 
 [PID Controller with High Kp oscillations] https://youtu.be/PQmTFTotB78
