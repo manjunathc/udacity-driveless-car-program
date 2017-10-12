@@ -24,9 +24,9 @@ P = Process
 I = Integral
 D = Defivative
 
-A proportional–integral–derivative controller (PID controller or three term controller) is a control loop feedback mechanism widely used in industrial control systems and a variety of other applications requiring continuously modulated control. [Wikipedia] https://en.wikipedia.org/wiki/PID_controller
+A proportional–integral–derivative controller (PID controller or three term controller) is a control loop feedback mechanism widely used in industrial control systems and a variety of other applications requiring continuously modulated control. [Wikipedia] https://en.wikipedia.org/wiki/PID_controller. The proportional, integral, and derivative terms are summed to calculate the output of the PID controller. 
 
-The proportional, integral, and derivative terms are summed to calculate the output of the PID controller  Cross Track error is the lateral distance between the vehicle and reference Tracjectory (CTE).
+Cross Track error is the lateral distance between the vehicle and reference Tracjectory (CTE).
 
 #### Steering Value - alpha(Controll Output) = -tau_p * CTE - tau_d * diff_CTE - tau_i * int_CTE 
 
