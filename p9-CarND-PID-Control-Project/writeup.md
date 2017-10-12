@@ -26,26 +26,26 @@ D = Defivative
 
 A proportional–integral–derivative controller (PID controller or three term controller) is a control loop feedback mechanism widely used in industrial control systems and a variety of other applications requiring continuously modulated control. [Wikipedia] https://en.wikipedia.org/wiki/PID_controller. The proportional, integral, and derivative terms are summed to calculate the output of the PID controller. 
 
-Cross Track error is the lateral distance between the vehicle and reference Tracjectory (CTE).
+**Cross Track error** is the lateral distance between the vehicle and reference Tracjectory (CTE).
 
 #### Steering Value - alpha(Controll Output) = -tau_p * CTE - tau_d * diff_CTE - tau_i * int_CTE 
 
 Here, 
-CTE - Cross Track Error
-tau_p = Kp
-tau_d = Kd
-tau_i = Ki
+**CTE - Cross Track Error
+**tau_p = Kp
+**tau_d = Kd
+**tau_i = Ki
 
 The proportion P is calcuated by 
 
-P = Process Term
+**P = Process Term
 -tau_p*CTE
 
 Where tau_p(Kp) the proportional Gain constant. 
 
 A high proportional gain results in a large change in the output for a given change in the error. If the proportional gain is too high, the system can become unstable. For ex: in the current case if the Kp is changed from 0.1 to 0.5 the car oscillates faster and eventually overshoots and will be out of the track.
 
-D = Differential Term
+**D = Differential Term
 
 -tau_d* d/dt(CTE)
 where 
@@ -56,7 +56,7 @@ d/dt(CTE) = CTE(t) - CTE(t-1)/delta_t (delta_t = 1)
 To reduce Overshoot, we have to counter steer and create a negative effect and gracefully approach target trajectory. 
 In the above equaton, tau_d (Kd) is the differential gain and its inversely proportional to the proportional Gain thus reducing the effect of Proportional gain. 
 
-I = Integral term
+**I = Integral term
 
 -tau_i(ki) * Integral (Sum of all Cross Track Error)
 
