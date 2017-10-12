@@ -39,9 +39,8 @@ Here,
 The proportion P is calcuated by 
 
 **P = Process Term**
--tau_p*CTE
 
-Where tau_p(Kp) the proportional Gain constant. 
+-tau_p*CTE - Where tau_p(Kp) the proportional Gain constant. 
 
 A high proportional gain results in a large change in the output for a given change in the error. If the proportional gain is too high, the system can become unstable. For ex: in the current case if the Kp is changed from 0.1 to 0.5 the car oscillates faster and eventually overshoots and will be out of the track.
 
@@ -53,7 +52,7 @@ where
 tau_d = differential gain
 d/dt(CTE) = CTE(t) - CTE(t-1)/delta_t (delta_t = 1)
 
-To reduce Overshoot, we have to counter steer and create a negative effect and gracefully approach target trajectory. 
+To reduce Overshoot, it needs to counter steer and create a negative effect and gracefully approach target trajectory. 
 In the above equaton, tau_d (Kd) is the differential gain and its inversely proportional to the proportional Gain thus reducing the effect of Proportional gain. 
 
 **I = Integral term**
