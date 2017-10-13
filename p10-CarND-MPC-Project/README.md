@@ -41,10 +41,6 @@ I have used starter code provided from the Udacity for completion of the project
 * This defines the future trajectory of the vehicle. 
 * In order to develop an optimal controller, we need define the cost function that reduces the errors (Cross track error and Orientation error)
 
-State diagram is as shown below.
-
-![alt text][image3]
-
 The vehicle model consists of:
 #### State 
 
@@ -64,9 +60,7 @@ Below are state, actuators and update equations.
 
 ![alt text][image2]
 
-Kinematic Model is used for its simplicity. The Model setup is depicted in the below diagram.
-
-![alt text][image1]
+Kinematic Model is used for its simplicity. 
 
 * Setup everything for Model Predictive Controller
 	* Define the duration of trajectory T by choosing N and dt.
@@ -96,6 +90,8 @@ Below Diagrams depict the algorithm.
 	* Model Predictive Control is to optimize the control inputs: [δ,a]. An optimizer will tune these inputs until a low cost vector of control inputs is found. The length of this vector is determined by N.
 
 A good approach to setting N, dt, and T is to first determine a reasonable range for T and then tune dt and N appropriately, keeping the effect of each in mind. 
+
+Follow
 
 
 
