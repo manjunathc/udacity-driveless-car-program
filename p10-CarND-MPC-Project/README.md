@@ -103,7 +103,7 @@ Below Videos are captured for dt = 0.3
 
 Below Videos are captured for dt = 0.1
 
-[Model Predictive Control] - https://youtu.be/I54Sjr5YDJM
+[Model Predictive Control] - https://www.youtube.com/watch?v=JzOVqy2Lw_c
 
 
 #### NOTE : Only N = 20 and dt = 0.05 performed well.
