@@ -46,7 +46,7 @@ State diagram is as shown below.
 ![alt text][image3]
 
 The vehicle model consists of:
-####State 
+#### State 
 
 * x: Vehicle x position
 * y: Vehicle y position
@@ -55,7 +55,7 @@ The vehicle model consists of:
 * cte: cross track error - Error between the center of the road and the vehicle's position as the cross track error
 * eψ : orientation error 
 
-####Control/Accuator Inputs 
+#### Control/Accuator Inputs 
 
 *δ: Steering Angle 
 *a: Accelerator/Brakes
