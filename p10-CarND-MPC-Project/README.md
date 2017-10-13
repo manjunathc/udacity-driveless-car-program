@@ -57,8 +57,8 @@ The vehicle model consists of:
 
 #### Control/Accuator Inputs 
 
-*δ: Steering Angle 
-*a: Accelerator/Brakes
+* δ: Steering Angle 
+* a: Accelerator/Brakes
 
 ![alt text][image2]
 
