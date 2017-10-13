@@ -4,8 +4,10 @@ Self-Driving Car Engineer Nanodegree Program
 [//]: # (Image References)
 [image1]: ./output_images/MPC_Algorithm_PNG.png
 [image2]: ./output_images/vehicle_model_equation.png
-[image3]: ./output_images/Vehicle_State.png
-
+[image3]: ./output_images/MPC_Algorithm_Step1.png
+[image4]: ./output_images/MPC_Algorithm_Step2.png
+[image5]: ./output_images/MPC_Algorithm_Step3.png
+[image6]: ./output_images/Vehicle_State.png 
 
 The goals / steps of this project are the following:
 
@@ -72,6 +74,15 @@ Kinematic Model is used for its simplicity. The Model setup is depicted in the b
 	* Define the vehicle Model
 	* Define Constraints with Actuator Limitations
 	* Find Cost Function
+
+Below Diagrams depict the algorithm.
+
+![alt text][image3]
+
+![alt text][image4]
+
+![alt text][image5]
+
 
 Error 
 
