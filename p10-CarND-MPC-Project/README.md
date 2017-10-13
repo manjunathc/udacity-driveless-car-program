@@ -46,16 +46,19 @@ State diagram is as shown below.
 ![alt text][image3]
 
 The vehicle model consists of:
-	*State 
-		*x: Vehicle x position
-		*y: Vehicle y position
-		*ψ (psi): vehicle’s angle in radians from the x-direction (radians)
-		*ν: vehicle’s velocity
-		*cte: cross track error - Error between the center of the road and the vehicle's position as the cross track error
-		*eψ : orientation error 
-	*Control/Accuator Inputs 
-		*δ: Steering Angle 
-		*a: Accelerator/Brakes
+####State 
+
+* x: Vehicle x position
+* y: Vehicle y position
+* ψ (psi): vehicle’s angle in radians from the x-direction (radians)
+* ν: vehicle’s velocity
+* cte: cross track error - Error between the center of the road and the vehicle's position as the cross track error
+* eψ : orientation error 
+
+####Control/Accuator Inputs 
+
+*δ: Steering Angle 
+*a: Accelerator/Brakes
 
 ![alt text][image2]
 
