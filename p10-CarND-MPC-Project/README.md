@@ -4,6 +4,7 @@ Self-Driving Car Engineer Nanodegree Program
 [//]: # (Image References)
 [image1]: ./output_images/MPC_Algorithm.jpg
 [image2]: ./output_images/vehicle_model_equation.png
+[image3]: ./output_images/Vehicle_State.png
 
 
 The goals / steps of this project are the following:
@@ -16,6 +17,7 @@ The goals / steps of this project are the following:
 
 * I have used MPC to optimize the Control Inputs, simulate tracjectory and minimize the errors. (Cross Track Error and Orientation error).
 * Kinematic Model is used for its simplicity. However, it doesn't take into account the external forces such as gravity, tire forces, Mass.
+
 
 
 I have used starter code provided from the Udacity for completion of the project. 
@@ -43,6 +45,10 @@ I have used starter code provided from the Udacity for completion of the project
 * This defines the future trajectory of the vehicle. 
 * In order to develop an optimal controller, we need define the cost function that reduces the errors (Cross track error and Orientation error)
 
+State diagram is as shown below.
+
+![alt text][image3]
+
 The vehicle model consists of:
 	* State 
 		* x: Vehicle x position
@@ -50,7 +56,7 @@ The vehicle model consists of:
 		* ψ (psi): vehicle’s angle in radians from the x-direction (radians)
 		* ν: vehicle’s velocity
 		* cte: cross track error - Error between the center of the road and the vehicle's position as the cross track error
-		* eψ : orientation error - 
+		* eψ : orientation error 
 	* Control/Accuator Inputs 
 		* δ: Steering Angle 
 		* a: Accelerator/Brakes
@@ -62,10 +68,12 @@ Kinematic Model is used for its simplicity. The Model setup is depicted in the b
 ![alt text][image1]
 
 * Setup everything for Model Predictive Controller
-* Define the duration of trajectory T by choosing N and dt.
-* Define the vehicle Model
-* Define Constraints with Actuator Limitations
-* Find Cost Function
+	* Define the duration of trajectory T by choosing N and dt.
+	* Define the vehicle Model
+	* Define Constraints with Actuator Limitations
+	* Find Cost Function
+
+Error 
 
 
 
