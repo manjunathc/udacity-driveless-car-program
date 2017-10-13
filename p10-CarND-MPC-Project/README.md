@@ -3,7 +3,7 @@ Self-Driving Car Engineer Nanodegree Program
 
 [//]: # (Image References)
 [image1]: ./output_images/MPC_Algorithm.jpg
-[image2]: ./output_images/vehicle_model_equation.jpg
+[image2]: ./output_images/vehicle_model_equation.png
 
 
 The goals / steps of this project are the following:
