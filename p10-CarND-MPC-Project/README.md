@@ -38,7 +38,10 @@ I have used starter code provided from the Udacity for completion of the project
 
 **Student describes their model in detail. This includes the state, actuators and update equations.**
 
-In this project, I have implemented Model Predictive Control to drive the car around the track. Kinematic and Dynamic Vehicle Model with Actuator constraints are the foundation of model predictive controls. This defines the future trajectory of the vehicle. In order to develop an optimal controller, we need define the cost function that reduces the errors (Cross track error and Orientation error)
+* In this project, I have implemented Model Predictive Control to drive the car around the track. 
+* Kinematic and Dynamic Vehicle Model with Actuator constraints are the foundation of model predictive controls. 
+* This defines the future trajectory of the vehicle. 
+* In order to develop an optimal controller, we need define the cost function that reduces the errors (Cross track error and Orientation error)
 
 The vehicle model consists of:
 	* State 
