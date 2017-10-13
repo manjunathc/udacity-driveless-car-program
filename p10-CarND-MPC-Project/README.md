@@ -88,12 +88,12 @@ Below Diagrams depict the algorithm.
 **Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.**
 
 * prediction horizon - T = N * dt
-	*T = Duration over which future predictions are made
-	*N = N is the number of timesteps in the horizon
-	*dt = dt is how much time elapses between actuations
+	* T = Duration over which future predictions are made
+	* N = N is the number of timesteps in the horizon
+	* dt = dt is how much time elapses between actuations
 
 * Number of Timesteps -  N
-	*Model Predictive Control is to optimize the control inputs: [δ,a]. An optimizer will tune these inputs until a low cost vector of control inputs is found. The length of this vector is determined by N.
+	* Model Predictive Control is to optimize the control inputs: [δ,a]. An optimizer will tune these inputs until a low cost vector of control inputs is found. The length of this vector is determined by N.
 
 A good approach to setting N, dt, and T is to first determine a reasonable range for T and then tune dt and N appropriately, keeping the effect of each in mind. 
 
