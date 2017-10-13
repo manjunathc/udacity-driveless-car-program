@@ -31,12 +31,6 @@ I have used starter code provided from the Udacity for completion of the project
 
 * Code is compiled as per the screen shot below and CMakeLists.txt is generic.
 
-![alt text][image1]
-
-
-![alt text][image2]
-
-
 
 ## Rubric Point - The Model : 
 
@@ -52,16 +46,16 @@ State diagram is as shown below.
 ![alt text][image3]
 
 The vehicle model consists of:
-	* State 
-		* x: Vehicle x position
-		* y: Vehicle y position
-		* ψ (psi): vehicle’s angle in radians from the x-direction (radians)
-		* ν: vehicle’s velocity
-		* cte: cross track error - Error between the center of the road and the vehicle's position as the cross track error
-		* eψ : orientation error 
-	* Control/Accuator Inputs 
-		* δ: Steering Angle 
-		* a: Accelerator/Brakes
+	*State 
+		*x: Vehicle x position
+		*y: Vehicle y position
+		*ψ (psi): vehicle’s angle in radians from the x-direction (radians)
+		*ν: vehicle’s velocity
+		*cte: cross track error - Error between the center of the road and the vehicle's position as the cross track error
+		*eψ : orientation error 
+	*Control/Accuator Inputs 
+		*δ: Steering Angle 
+		*a: Accelerator/Brakes
 
 ![alt text][image2]
 
@@ -84,9 +78,19 @@ Below Diagrams depict the algorithm.
 ![alt text][image5]
 
 
-Error 
+## Rubric Point - Timestep Length and Elapsed Duration (N & dt) : 
 
+**Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.**
 
+* prediction horizon - T = N * dt
+	*T = Duration over which future predictions are made
+	*N = N is the number of timesteps in the horizon
+	*dt = dt is how much time elapses between actuations
+
+* Number of Timesteps -  N
+	*Model Predictive Control is to optimize the control inputs: [δ,a]. An optimizer will tune these inputs until a low cost vector of control inputs is found. The length of this vector is determined by N.
+
+A good approach to setting N, dt, and T is to first determine a reasonable range for T and then tune dt and N appropriately, keeping the effect of each in mind. 
 
 
 
