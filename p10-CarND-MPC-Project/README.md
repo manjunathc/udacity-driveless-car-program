@@ -60,6 +60,8 @@ The vehicle model consists of:
 * δ: Steering Angle 
 * a: Accelerator/Brakes
 
+Below are state, actuators and update equations.
+
 ![alt text][image2]
 
 Kinematic Model is used for its simplicity. The Model setup is depicted in the below diagram.
