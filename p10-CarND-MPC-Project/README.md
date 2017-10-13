@@ -32,7 +32,8 @@ I have used starter code provided from the Udacity for completion of the project
 * Code is compiled as per the screen shot below and CMakeLists.txt is generic.
 
 
-## Rubric Point - The Model : 
+##Implementation
+### Rubric Point - The Model : 
 
 **Student describes their model in detail. This includes the state, actuators and update equations.**
 
@@ -77,11 +78,11 @@ Below Diagrams depict the algorithm.
 ![alt text][image5]
 
 
-## Rubric Point - Timestep Length and Elapsed Duration (N & dt) : 
+### Rubric Point - Timestep Length and Elapsed Duration (N & dt) : 
 
 **Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.**
 
-* prediction horizon - T = N * dt
+* Prediction horizon - T = N * dt
 	* T = Duration over which future predictions are made
 	* N = N is the number of timesteps in the horizon
 	* dt = dt is how much time elapses between actuations
@@ -91,7 +92,52 @@ Below Diagrams depict the algorithm.
 
 A good approach to setting N, dt, and T is to first determine a reasonable range for T and then tune dt and N appropriately, keeping the effect of each in mind. 
 
-Follow
+The value of N and dt are below.
+
+* N = 20
+* dt = 0.05s // I tested with 0.1, 0.3, 0.001
+
+Below Videos are captured for dt = 0.3
+
+[Model Predictive Control] - https://youtu.be/I54Sjr5YDJM
+
+Below Videos are captured for dt = 0.1
+
+[Model Predictive Control] - https://youtu.be/I54Sjr5YDJM
+
+
+#### NOTE : Only N = 20 and dt = 0.05 performed well.
+
+
+### Rubric Point - Polynomial Fitting and MPC Preprocessing : 
+
+**A polynomial is fitted to waypoints. If the student preprocesses waypoints, the vehicle state, and/or actuators prior to the MPC procedure it is described.**
+
+* The JSON data consists of the map co-ordinates (waypoints). However, we need Vehicle co-ordinates for MPC algorithm. The conversion was done in the main.cpp (Lines 124 - 130)
+* Following formulas were used for conversion.
+	* dx = X-Coordinate of the map - x-Coordinate of the vehicle;
+    * dy = Y-Coordinate of the map - y-Coordinate of the vehicle;
+    * x_vehicle_coordinates = dx * cos(-psi) - dy * sin(-psi);
+    * y_vehicle_coordinates = dy * cos(-psi) + dx * sin(-psi);
+
+### Rubric Point - Model Predictive Control with Latency : 
+
+**The student implements Model Predictive Control that handles a 100 millisecond latency. Student provides details on how they deal with latency.**
+
+
+## Simulation
+### Rubric Point - The vehicle must successfully drive a lap around the track. : 
+
+**No tire may leave the drivable portion of the track surface. The car may not pop up onto ledges or roll over any surfaces that would otherwise be considered unsafe (if humans were in the vehicle).
+The car can't go over the curb, but, driving on the lines before the curb is ok.**
+
+
+Final Video: N = 20 and dt = 0.05
+
+[Model Predictive Control] - https://youtu.be/6_sILvRzzMg
+
+
+
 
 
 
