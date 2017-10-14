@@ -19,20 +19,9 @@ The goals / steps of this project are the following:
 
 * I have used MPC to optimize the Control Inputs, simulate tracjectory and minimize the errors. (Cross Track Error and Orientation error).
 * Kinematic Model is used for its simplicity. However, it doesn't take into account the external forces such as gravity, tire forces, Mass.
+* I have used starter code provided from the Udacity for completion of the project. 
 
-
-
-I have used starter code provided from the Udacity for completion of the project. 
-
-
-## Rubric Point : Your code should compile.
-
-**Code must compile without errors with cmake and make. Given that we've made CMakeLists.txt as general as possible, it's recommend that you do not change it unless you can guarantee that your changes will still compile on any platform.**
-
-* Code is compiled as per the screen shot below and CMakeLists.txt is generic.
-
-
-##Implementation
+## Implementation
 ### Rubric Point - The Model : 
 
 **Student describes their model in detail. This includes the state, actuators and update equations.**
