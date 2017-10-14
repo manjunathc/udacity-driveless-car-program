@@ -124,7 +124,7 @@ Below Videos are captured for dt = 0.1
 
 **The student implements Model Predictive Control that handles a 100 millisecond latency. Student provides details on how they deal with latency.**
 
-*In a real car, an actuation command won't execute instantly - there will be a delay as the command propagates through the system. 
+*In a real car, an actuation command won't execute instantly - there will be a delay as the command propagates through the system.
 *A realistic delay might be on the order of 100 milliseconds. A latency of 100ms was added to increase stability.
 *The delay was added to the Kinematic Model and passed to MPC routine. The code for this is found in main.cpp (Lines 137 - 143)
 
