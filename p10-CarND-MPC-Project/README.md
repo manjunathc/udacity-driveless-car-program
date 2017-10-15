@@ -83,19 +83,18 @@ A good approach to setting N, dt, and T is to first determine a reasonable range
 
 The value of N and dt are below.
 
-* N = 20
-* dt = 0.05s // I tested with 0.1, 0.3, 0.001
+* N = 7
+* dt = 0.1 // I tested with 0.1, 0.3, 0.001
 
-Below Videos are captured for dt = 0.3
+T = 7 * 0.1 = .7Secs
 
-[Model Predictive Control] - https://youtu.be/I54Sjr5YDJM
+The future predictiosn are done over 0.7 secs.
 
-Below Videos are captured for dt = 0.1
+### Rubric Point
 
-[Model Predictive Control] - https://www.youtube.com/watch?v=JzOVqy2Lw_c
+** Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried ** 
 
 
-#### NOTE : Only N = 20 and dt = 0.05 performed well.
 
 
 ### Rubric Point - Polynomial Fitting and MPC Preprocessing : 
@@ -108,7 +107,8 @@ Below Videos are captured for dt = 0.1
     * dy = Y-Coordinate of the map - y-Coordinate of the vehicle;
     * x_vehicle_coordinates = dx * cos(-psi) - dy * sin(-psi);
     * y_vehicle_coordinates = dy * cos(-psi) + dx * sin(-psi);
-* Third Order polynomial is calculated to the given x and y coordinates representing vehicle-coordinates.
+* Third Order polynomial is calculated to the given x and y coordinates representing vehicle-coordinates. Main.cpp (Line 133)
+
 
 ### Rubric Point - Model Predictive Control with Latency : 
 
@@ -118,6 +118,18 @@ Below Videos are captured for dt = 0.1
 * A realistic delay might be on the order of 100 milliseconds. A latency of 100ms was added to increase stability.
 * The delay was added to the Kinematic Model and passed to MPC routine. The code for this is found in main.cpp (Lines 137 - 143)
 
+
+### Rubric Point - Model Predictive Control with Latency : 
+
+** A polynomial is fitted to waypoints.
+
+If the student preprocesses waypoints, the vehicle state, and/or actuators prior to the MPC procedure it is described. **
+
+
+
+
+
+
 ## Simulation
 ### Rubric Point - The vehicle must successfully drive a lap around the track. : 
 
@@ -125,9 +137,11 @@ Below Videos are captured for dt = 0.1
 The car can't go over the curb, but, driving on the lines before the curb is ok.**
 
 
-Final Video: N = 20 and dt = 0.05
+Final Video: N = 7 and dt = 0.1 
 
-[Model Predictive Control] - https://youtu.be/6_sILvRzzMg
+[Model Predictive Control - 50 mph] - https://youtu.be/Se6wj49RDBE
+
+[Model Predictive Control - 75 mph] - https://youtu.be/kLQQ3xiI3oI
 
 
 
