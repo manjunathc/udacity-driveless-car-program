@@ -81,8 +81,6 @@ T = N * dt
 * Number of Timesteps -  N
 	* Model Predictive Control is to optimize the control inputs: [δ,a]. An optimizer will tune these inputs until a low cost vector of control inputs is found. The length of this vector is determined by N.
 
-A Short prediction horizons may lead to more responsive controlers. However they are not so accurate. Long prediction horizons generally lead to smoother controls. For a given prediction horizon shorter time steps dt imply more accurate controls but also require a larger NMPC problem to be solved, thus increasing latency.
-
 A good approach to setting N, dt, and T is to first determine a reasonable range for T and then tune dt and N appropriately, keeping the effect of each in mind. 
 
 The value of N and dt are below.
