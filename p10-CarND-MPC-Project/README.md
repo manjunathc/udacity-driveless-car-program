@@ -94,7 +94,7 @@ The future predictiosn are done over 0.7 secs.
 
 ### Rubric Point
 
-** Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried ** 
+**Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried** 
   
 I started with N = 20 and dt = 0.05 which was 1 sec. I thought it was a good parameter for prediction. Even though the car was with the track, it was swaying across the path especially during the tracjectory motion.
 
@@ -102,7 +102,7 @@ So, I modified both N, dt with Various values. There are videos for N=7 and dt =
 
 Finally, N=7 with dt = 0.1 and Latency with 150 ms worked various speeds of 50, 75 and 100 MPH. 
 
-** Once I chose N and dt, I held it constant and tuned all cost funtions. **
+**Once I chose N and dt, I held it constant and tuned all cost funtions.**
 
 The tuning of cost funtions played a major role in achieveing the final result. I increased the Orientation error by multiplicative factor(5) and a higher penalty factor (1250) was added to the steering angle for a stable control behavior at higher velocities. I even tuned the latency to 150 ms to account for the processing time of the solver and the latency of the communication with the simulator. 
 
