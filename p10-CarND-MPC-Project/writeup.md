@@ -71,7 +71,9 @@ Below Diagrams depict the algorithm.
 
 **Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.**
 
-* Prediction horizon - T = N * dt
+* Prediction horizon : 
+
+T = N * dt
 	* T = Duration over which future predictions are made
 	* N = N is the number of timesteps in the horizon
 	* dt = dt is how much time elapses between actuations
@@ -83,40 +85,113 @@ A good approach to setting N, dt, and T is to first determine a reasonable range
 
 The value of N and dt are below.
 
-* N = 20
-* dt = 0.05s // I tested with 0.1, 0.3, 0.001
+* N = 7
+* dt = 0.1 // I tested with 0.3, 0.8,
 
-Below Videos are captured for dt = 0.3
+T = 7 * 0.1 = .7Secs
 
-[Model Predictive Control] - https://youtu.be/I54Sjr5YDJM
+The future predictiosn are done over 0.7 secs.
 
-Below Videos are captured for dt = 0.1
+### Rubric Point
 
-[Model Predictive Control] - https://www.youtube.com/watch?v=JzOVqy2Lw_c
+**Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried** 
+  
+I started with N = 20 and dt = 0.05 which was 1 sec. I thought it was a good parameter for prediction. Even though the car was with the track, it was swaying across the path especially during the tracjectory motion.
+
+So, I modified both N, dt with Various values. There are videos for N=7 and dt = 0.3 and 0.8. 
+
+Finally, N=7 with dt = 0.1 and Latency with 150 ms worked various speeds of 50, 75 and 100 MPH. 
+
+**Once I chose N and dt, I held it constant and tuned all cost funtions.**
+
+The tuning of cost funtions played a major role in achieveing the final result. I increased the Orientation error by multiplicative factor(5) and a higher penalty factor (1250) was added to the steering angle for a stable control behavior at higher velocities. I even tuned the latency to 150 ms to account for the processing time of the solver and the latency of the communication with the simulator. 
+
+This did help to reduce the Oscillations.
+
+Final Values and weights Used: 
+
+	* N = 7;  //Line number 18 in MPC.cpp
+	* dt = 0.1;  //Line number 19 in MPC.cpp 
+	* reference_cte = 0.0; //Line number 21 in MPC.cpp 
+	* reference_epsi = 0.0; //Line number 22 in MPC.cpp 
+	* reference_v = 50.0; //Line number 23 in MPC.cpp 
+	* Weight for reference_epsi = 10 //Line number 87 in MPC.cpp
+	* Weight for throttle/acceleration = 50 //Line number 95 in MPC.cpp  
+	* Weight for Orientation error = 5 //Line number 101 in MPC.cpp 
+	* Weight for Steering angle = 1250 //Line number 100 in MPC.cpp 
+	* Latency = 150 ms //Line number 27 in main.cpp 
+	* Lf = 2.67 // 
 
 
-#### NOTE : Only N = 20 and dt = 0.05 performed well.
+Other Values tried
+
+* N = 7
+* dt = 0.3
+
+[ Model Predictive Controller ] https://youtu.be/0KyGlH6_-Gk
+
+* N = 7
+* dt = 0.8
+
+[ Model Predictive Controller ] https://youtu.be/1NwPzLOY6Gs
+
+
+
 
 
 ### Rubric Point - Polynomial Fitting and MPC Preprocessing : 
 
 **A polynomial is fitted to waypoints. If the student preprocesses waypoints, the vehicle state, and/or actuators prior to the MPC procedure it is described.**
 
-* The JSON data consists of the map co-ordinates (waypoints). However, we need Vehicle co-ordinates for MPC algorithm. The conversion was done in the main.cpp (Lines 124 - 130)
+* The JSON data consists of the map co-ordinates (waypoints). However, we need Vehicle co-ordinates for MPC algorithm. The conversion was done in the main.cpp (Lines 130 - 135)
 * Following formulas were used for conversion.
 	* dx = X-Coordinate of the map - x-Coordinate of the vehicle;
     * dy = Y-Coordinate of the map - y-Coordinate of the vehicle;
     * x_vehicle_coordinates = dx * cos(-psi) - dy * sin(-psi);
     * y_vehicle_coordinates = dy * cos(-psi) + dx * sin(-psi);
-* Third Order polynomial is calculated to the given x and y coordinates representing vehicle-coordinates. Main.cpp (Line 133)
+
+Following formula is used for the conversion.
+
+x_vehicle_coordinates[i] = dx * cos(-psi) - dy * sin(-psi);
+y_vehicle_coordinates[i] = dy * cos(-psi) + dx * sin(-psi);
+
+The path planning block passes the reference trajectory is typically passed to the control block as a polynomial. This polynomial is usually 3rd order, since third order polynomials will fit trajectories for most roads. 
+
+* Polyfit a 3rd order polynomials to vehicle co-ordinates (x-vehicle-coordinate, y-vehicle-co-ordinate, third_degree_polynomial).  Line 138
+* The cross-track error is calculated by evaluating the polynomial function (polyeval())  - Line 142
+* The psi error, or epsi, which is calculated from the derivative of polynomial fit line - Line 143
+
+**The entire state funtion need to be calculated in terms of vehicle co-ordinates from the Map co-oridnates with additional Delay of 150ms **
+
+The initial State before the delay is 
+
+* x = 0;
+* y = 0;
+* ψ = 0;
+* cte = coeffs[0];
+* epsi = -atan(coeffs[1]);
+* Lf = 2.67; //measures the distance between the front of the vehicle and its center of gravity. The larger the vehicle, the slower the turn rate.
+
+After the latency is added below formula is used for calculation.
+
+* px_act = x + ( v * cos(ψ) * latency ) = v * latency;
+* py_act = y + ( v * sin(ψ) * latency ) = 0
+* psi_act = ψ - ( v * steering_angle * latency / Lf ); = - v * steering_angle * latency / LF;
+* v_act = v + a * delay; = v + throttle * dt;
+* cte_act = cte + ( v * sin(epsi0) * delay ) = cte + v * sin(epsi) * dt;
+* epsi_act = epsi - ( v * atan(coeffs[1]) * latency / Lf ) = epsi + psi_act;
+
+This is computed in the following lines in main.cpp (151 - 156)
+
 
 ### Rubric Point - Model Predictive Control with Latency : 
 
 **The student implements Model Predictive Control that handles a 100 millisecond latency. Student provides details on how they deal with latency.**
 
 * In a real car, an actuation command won't execute instantly - there will be a delay as the command propagates through the system.
-* A realistic delay might be on the order of 100 milliseconds. A latency of 100ms was added to increase stability.
-* The delay was added to the Kinematic Model and passed to MPC routine. The code for this is found in main.cpp (Lines 137 - 143)
+* A realistic delay might be on the order of 100 milliseconds. A latency of 150ms was added to increase stability.
+* The delay was added to the Kinematic Model and passed to MPC routine. The code for this is found in main.cpp (Lines 151 - 156)
+
 
 ## Simulation
 ### Rubric Point - The vehicle must successfully drive a lap around the track. : 
@@ -125,9 +200,11 @@ Below Videos are captured for dt = 0.1
 The car can't go over the curb, but, driving on the lines before the curb is ok.**
 
 
-Final Video: N = 20 and dt = 0.05
+Final Video: N = 7 and dt = 0.1 
 
-[Model Predictive Control] - https://youtu.be/6_sILvRzzMg
+[Model Predictive Control - 50 mph] - https://youtu.be/Se6wj49RDBE
+
+[Model Predictive Control - 75 mph] - https://youtu.be/kLQQ3xiI3oI
 
 
 
