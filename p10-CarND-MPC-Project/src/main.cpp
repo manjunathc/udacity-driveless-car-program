@@ -24,7 +24,7 @@ double rad2deg(double x) {
   return x * 180 / pi();
 }
 
-const double dt = 0.15;  // time step latency in s
+const double dt = 0.15;  // time step latency in secs (150 milliseconds). This was increased to reduce oscillations
 const double LF = 2.67;  //
 
 // Checks if the SocketIO event has JSON data.
@@ -73,10 +73,6 @@ Eigen::VectorXd polyfit(Eigen::VectorXd xvals, Eigen::VectorXd yvals,
   auto Q = A.householderQr();
   auto result = Q.solve(yvals);
   return result;
-}
-
-void convertMapCoordinatesToVehicleCoordinates() {
-
 }
 
 int main() {
@@ -131,8 +127,6 @@ int main() {
             Eigen::VectorXd x_vehicle_coordinates(ptsx.size());
             Eigen::VectorXd y_vehicle_coordinates(ptsx.size());
 
-            //convertMapCoordinatesToVehicleCoordinates(ptsx,ptsy,px,py,x_vehicle_coordinates,y_vehicle_coordinates,psi);
-
             for(int i = 0; i < ptsx.size(); i++) {
               const double dx = ptsx[i] - px;
               const double dy = ptsy[i] - py;
@@ -145,8 +139,7 @@ int main() {
 
             // compute the coefficients
             //const double cte = coeffs[0];
-            double cte = polyeval(coeffs, 0);
-
+            const double cte = polyeval(coeffs, 0);
             const double epsi = -atan(coeffs[1]);//-f'(0)
 
             //print Latency

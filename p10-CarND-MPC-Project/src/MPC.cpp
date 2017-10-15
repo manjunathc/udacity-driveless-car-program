@@ -20,7 +20,7 @@ double dt = 0.1;  //dt is the time elapses between actuations - Tested with 0.3
 
 const double reference_cte = 0.0;
 const double reference_epsi = 0.0;
-const double reference_v = 60.0;  // Set the Vehicle speed to 70 MPH, so the vehicle doesn't stop in between.
+const double reference_v = 50.0;  // Set the Vehicle speed to 50 MPH, so the vehicle doesn't stop in between.
 
 // This value assumes the model presented in the classroom is used.
 //
@@ -80,7 +80,11 @@ class FG_eval {
     fg[0] = 0;
     for (int t = 0; t < N; t++) {
       fg[0] += CppAD::pow(vars[cte_start + t] - reference_cte , 2);
-      fg[0] += 10 * CppAD::pow(vars[epsi_start + t] - reference_epsi, 2);  // Added a
+      
+      // Added as per review feedback from Udacity - 
+      //Increasing the weight for the orientation error might help to keep the car pointing in the direction of the road thus dampening the control behavior.
+
+      fg[0] += 10 * CppAD::pow(vars[epsi_start + t] - reference_epsi, 2);  
       //fg[0] += CppAD::pow(vars[epsi_start + t] - reference_epsi, 2);
       fg[0] += CppAD::pow(vars[v_start + t] - reference_v, 2);
     }

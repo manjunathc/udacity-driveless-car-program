@@ -84,7 +84,7 @@ A good approach to setting N, dt, and T is to first determine a reasonable range
 The value of N and dt are below.
 
 * N = 7
-* dt = 0.1 // I tested with 0.1, 0.3, 0.001
+* dt = 0.1 // I tested with 0.3, 0.8,
 
 T = 7 * 0.1 = .7Secs
 
@@ -93,6 +93,20 @@ The future predictiosn are done over 0.7 secs.
 ### Rubric Point
 
 ** Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried ** 
+
+
+Other Values tried
+
+* N = 7
+* dt = 0.1 // I tested with 0.3
+
+https://youtu.be/0KyGlH6_-Gk
+
+* N = 7
+* dt = 0.3 // I tested with 0.8
+
+https://youtu.be/1NwPzLOY6Gs
+
 
 
 
@@ -124,8 +138,6 @@ The future predictiosn are done over 0.7 secs.
 ** A polynomial is fitted to waypoints.
 
 If the student preprocesses waypoints, the vehicle state, and/or actuators prior to the MPC procedure it is described. **
-
-
 
 
 
