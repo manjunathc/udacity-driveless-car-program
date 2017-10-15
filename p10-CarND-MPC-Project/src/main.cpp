@@ -134,7 +134,7 @@ int main() {
               y_vehicle_coordinates[i] = dy * cos(-psi) + dx * sin(-psi);
             }
 
-            // Fit a 3rd order polynomial to the given x and y coordinates representing map-coordinates.
+            // Fit a 3rd order polynomial to the given x and y coordinates representing vehicle-coordinates.
             auto coeffs = polyfit(x_vehicle_coordinates, y_vehicle_coordinates, 3);
 
             // compute the coefficients

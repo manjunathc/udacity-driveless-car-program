@@ -108,7 +108,7 @@ The tuning of cost funtions played a major role in achieveing the final result. 
 
 This did help to reduce the Oscillations.
 
-Final Values Used MPC.cpp
+Final Values and weights Used: 
 
 	* N = 7;  //Line number 18 in MPC.cpp
 	* dt = 0.1;  //Line number 19 in MPC.cpp 
