@@ -8,6 +8,7 @@
 #include "Eigen-3.3/Eigen/QR"
 #include "MPC.h"
 #include "json.hpp"
+#include <chrono>
 
 // for convenience
 using json = nlohmann::json;
@@ -23,8 +24,8 @@ double rad2deg(double x) {
   return x * 180 / pi();
 }
 
-const double dt = 0.1;  // time step duration dt in s
-const double LF = 2.67; //
+const double dt = 0.15;  // time step latency in s
+const double LF = 2.67;  //
 
 // Checks if the SocketIO event has JSON data.
 // If there is data the JSON object in string format will be returned,
@@ -74,6 +75,10 @@ Eigen::VectorXd polyfit(Eigen::VectorXd xvals, Eigen::VectorXd yvals,
   return result;
 }
 
+void convertMapCoordinatesToVehicleCoordinates() {
+
+}
+
 int main() {
   uWS::Hub h;
 
@@ -103,6 +108,9 @@ int main() {
             double psi = j[1]["psi"];// The orientation of the vehicle
             double v = j[1]["speed"];// Speed of the vehicle
             v = v * 0.447;// mph to m/s
+            //auto start = std::chrono::system_clock::now();
+            //std::chrono::duration<double> diff = start;
+            //std::cout << "Latency is --> " << diff.count() << " s\n";
 
             //Capture the actuator Inputs
             //Obtain steering angle and throttle from JSON Data
@@ -122,6 +130,9 @@ int main() {
             //First convert all the ptsx,ptsy positions(Map Co-ordinates) to vehicle co-ordinates. The below code will convert all Map co-ordinates to vehicle co-ordinates.
             Eigen::VectorXd x_vehicle_coordinates(ptsx.size());
             Eigen::VectorXd y_vehicle_coordinates(ptsx.size());
+
+            //convertMapCoordinatesToVehicleCoordinates(ptsx,ptsy,px,py,x_vehicle_coordinates,y_vehicle_coordinates,psi);
+
             for(int i = 0; i < ptsx.size(); i++) {
               const double dx = ptsx[i] - px;
               const double dy = ptsy[i] - py;
@@ -129,10 +140,19 @@ int main() {
               y_vehicle_coordinates[i] = dy * cos(-psi) + dx * sin(-psi);
             }
 
-            // Fit a 3rd order polynomial to the given x and y coordinates representing vehicle-coordinates.
+            // Fit a 3rd order polynomial to the given x and y coordinates representing map-coordinates.
             auto coeffs = polyfit(x_vehicle_coordinates, y_vehicle_coordinates, 3);
-            const double cte = coeffs[0];
+
+            // compute the coefficients
+            //const double cte = coeffs[0];
+            double cte = polyeval(coeffs, 0);
+
             const double epsi = -atan(coeffs[1]);//-f'(0)
+
+            //print Latency
+            //auto now = std::chrono::system_clock::now();
+            //auto in_time_t = std::chrono::system_clock::to_time_t(now);
+            //std::localtime(&in_time_t);
 
             // Kinematic model is used to predict vehicle state at the actual moment of control (current time + delay dt (Latency))
             const double px_act = v * dt;
@@ -155,11 +175,11 @@ int main() {
             double throttle_value;
 
             /* Begin State Feedback Loop
-                1. First Pass the current state to Model Predictive Controller
-                2. Next the Optimization Solver is called
-                3. Solver uses the initial step, the model, constraints and cost functions to return the vector of control inputs that minimize the cost function.
-                4. The solver will use IPOPT.
-                5. Apply the first control input to the vehicle and repeat the loop.*/
+             1. First Pass the current state to Model Predictive Controller
+             2. Next the Optimization Solver is called
+             3. Solver uses the initial step, the model, constraints and cost functions to return the vector of control inputs that minimize the cost function.
+             4. The solver will use IPOPT.
+             5. Apply the first control input to the vehicle and repeat the loop.*/
 
             vector<double> mpc_results = mpc.Solve(state, coeffs);
             steer_value = mpc_results[0]/ deg2rad(25);// converts the degrees to Radians.
@@ -170,7 +190,6 @@ int main() {
             // Otherwise the values will be in between [-deg2rad(25), deg2rad(25] instead of [-1, 1].
 
             //The yellow line is the reference trajectory and the green line the trajectory computed by Model Predictive Control.
-            //In this example the horizon has 20 steps, N, and the space in between white pebbles signifies the time elapsed, dt which is 0.1.
 
             msgJson["steering_angle"] = -steer_value;
             msgJson["throttle"] = throttle_value;
@@ -252,5 +271,5 @@ int main() {
     std::cerr << "Failed to listen to port" << std::endl;
     return -1;
   }
-h.run();
+  h.run();
 }

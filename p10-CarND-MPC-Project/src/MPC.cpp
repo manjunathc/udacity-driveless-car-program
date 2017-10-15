@@ -14,12 +14,13 @@
 using CppAD::AD;
 
 // TODO: Set the timestep length and duration
-size_t N = 20;  //N is the number of timesteps in the horizon
-double dt = 0.05;  //dt is the time elapses between actuations
+//size_t N = 20;  //N is the number of timesteps in the horizon. 
+size_t N = 7;  //N is the number of timesteps in the horizon. This was modifed as per the review comments
+double dt = 0.1;  //dt is the time elapses between actuations - Tested with 0.3, 0.8
 
 const double reference_cte = 0.0;
 const double reference_epsi = 0.0;
-const double reference_v = 40.0; // Set the Vehicle speed to 40 MPH, so the vehicle doesn't stop in between.
+const double reference_v = 60.0;  // Set the Vehicle speed to 70 MPH, so the vehicle doesn't stop in between.
 
 // This value assumes the model presented in the classroom is used.
 //
@@ -79,7 +80,8 @@ class FG_eval {
     fg[0] = 0;
     for (int t = 0; t < N; t++) {
       fg[0] += CppAD::pow(vars[cte_start + t] - reference_cte , 2);
-      fg[0] += CppAD::pow(vars[epsi_start + t] - reference_epsi, 2);
+      fg[0] += 10 * CppAD::pow(vars[epsi_start + t] - reference_epsi, 2);  // Added a
+      //fg[0] += CppAD::pow(vars[epsi_start + t] - reference_epsi, 2);
       fg[0] += CppAD::pow(vars[v_start + t] - reference_v, 2);
     }
 
@@ -91,8 +93,8 @@ class FG_eval {
 
     // Minimize the value gap between sequential actuations.
     for (int t = 0; t < N - 2; t++) {
-      fg[0] += 1150 * CppAD::pow(vars[delta_start + t + 1] - vars[delta_start + t], 2);
-      fg[0] += CppAD::pow(vars[a_start + t + 1] - vars[a_start + t], 2);
+      fg[0] += 1250 * CppAD::pow(vars[delta_start + t + 1] - vars[delta_start + t], 2);
+      fg[0] += 5 * CppAD::pow(vars[a_start + t + 1] - vars[a_start + t], 2);
     }
 
     //Initialization & constraints
