@@ -93,16 +93,31 @@ The future predictiosn are done over 0.7 secs.
 ### Rubric Point
 
 ** Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried ** 
- 
-I started with N = 20 and dt = 0.05 which was 1 sec. I thought it was a good parameter for prediction. Eventhough the car was with the track, it was swaying across the path especially during the tracjectory motion.
+  
+I started with N = 20 and dt = 0.05 which was 1 sec. I thought it was a good parameter for prediction. Even though the car was with the track, it was swaying across the path especially during the tracjectory motion.
 
 So, I modified both N, dt with Various values. There are videos for N=7 and dt = 0.3 and 0.8. 
 
 Finally, N=7 with dt = 0.1 and Latency with 150 ms worked various speeds of 50, 75 and 100 MPH. All the values were based on trial and Error.  
 
-The tuning of cost funtions played a major role in achieveing the final result. I increased the Orientation error by multiplicative factor(10) and a higher penalty factor (1250) was added to the steering angle for a stable control behavior at higher velocities.
+The tuning of cost funtions played a major role in achieveing the final result. I increased the Orientation error by multiplicative factor(10) and a higher penalty factor (1250) was added to the steering angle for a stable control behavior at higher velocities. I even tuned the latency to 150 ms to account for the processing time of the solver and the latency of the communication with the simulator. 
+
+This did help to reduce the Oscillations.
 
 All these changes can be found at lines 87, 100 and 101 in MPC.cpp.
+
+Final Values Used MPC.cpp
+
+	* N = 7;  //N is the number of timesteps in the horizon.
+	* dt = 0.1;  //dt is the time elapses between actuations
+	* reference_cte = 0.0;
+	* reference_epsi = 0.0;
+	* reference_v = 50.0; 
+	* Weight for reference_epsi = 10
+	* Weight for Orientation error = 10
+	* Weight for Steering angle = 1250
+	* Latency = 150 ms
+
 
 Other Values tried
 
@@ -117,7 +132,7 @@ Other Values tried
 [ Model Predictive Controller ] https://youtu.be/1NwPzLOY6Gs
 
 
-I even tuned the latency to 150 ms to account for the processing time of the solver and the latency of the communication with the simulator. This did help to reduce the Oscillations.
+
 
 
 ### Rubric Point - Polynomial Fitting and MPC Preprocessing : 
