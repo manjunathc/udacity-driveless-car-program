@@ -71,13 +71,17 @@ Below Diagrams depict the algorithm.
 
 **Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.**
 
-* Prediction horizon - T = N * dt
+* Prediction horizon : 
+
+T = N * dt
 	* T = Duration over which future predictions are made
 	* N = N is the number of timesteps in the horizon
 	* dt = dt is how much time elapses between actuations
 
 * Number of Timesteps -  N
 	* Model Predictive Control is to optimize the control inputs: [δ,a]. An optimizer will tune these inputs until a low cost vector of control inputs is found. The length of this vector is determined by N.
+
+A Short prediction horizons may lead to more responsive controlers. However they are not so accurate. Long prediction horizons generally lead to smoother controls. For a given prediction horizon shorter time steps dt imply more accurate controls but also require a larger NMPC problem to be solved, thus increasing latency.
 
 A good approach to setting N, dt, and T is to first determine a reasonable range for T and then tune dt and N appropriately, keeping the effect of each in mind. 
 
@@ -98,7 +102,9 @@ I started with N = 20 and dt = 0.05 which was 1 sec. I thought it was a good par
 
 So, I modified both N, dt with Various values. There are videos for N=7 and dt = 0.3 and 0.8. 
 
-Finally, N=7 with dt = 0.1 and Latency with 150 ms worked various speeds of 50, 75 and 100 MPH. All the values were based on trial and Error.  
+Finally, N=7 with dt = 0.1 and Latency with 150 ms worked various speeds of 50, 75 and 100 MPH. 
+
+Once I chose N and dt, I held it constant and tuned all cost funtions.
 
 The tuning of cost funtions played a major role in achieveing the final result. I increased the Orientation error by multiplicative factor(5) and a higher penalty factor (1250) was added to the steering angle for a stable control behavior at higher velocities. I even tuned the latency to 150 ms to account for the processing time of the solver and the latency of the communication with the simulator. 
 
