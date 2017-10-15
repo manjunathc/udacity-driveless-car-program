@@ -98,14 +98,14 @@ The future predictiosn are done over 0.7 secs.
 Other Values tried
 
 * N = 7
-* dt = 0.1 // I tested with 0.3
+* dt = 0.3
 
-https://youtu.be/0KyGlH6_-Gk
+[ Model Predictive Controller ] https://youtu.be/0KyGlH6_-Gk
 
 * N = 7
-* dt = 0.3 // I tested with 0.8
+* dt = 0.8
 
-https://youtu.be/1NwPzLOY6Gs
+[ Model Predictive Controller ] https://youtu.be/1NwPzLOY6Gs
 
 
 
