@@ -120,6 +120,7 @@ Final Values and weights Used:
 	* Weight for Orientation error = 5 //Line number 101 in MPC.cpp 
 	* Weight for Steering angle = 1250 //Line number 100 in MPC.cpp 
 	* Latency = 150 ms //Line number 27 in main.cpp 
+	* Lf = 2.67 // 
 
 
 Other Values tried
@@ -142,13 +143,45 @@ Other Values tried
 
 **A polynomial is fitted to waypoints. If the student preprocesses waypoints, the vehicle state, and/or actuators prior to the MPC procedure it is described.**
 
-* The JSON data consists of the map co-ordinates (waypoints). However, we need Vehicle co-ordinates for MPC algorithm. The conversion was done in the main.cpp (Lines 124 - 130)
+* The JSON data consists of the map co-ordinates (waypoints). However, we need Vehicle co-ordinates for MPC algorithm. The conversion was done in the main.cpp (Lines 130 - 135)
 * Following formulas were used for conversion.
 	* dx = X-Coordinate of the map - x-Coordinate of the vehicle;
     * dy = Y-Coordinate of the map - y-Coordinate of the vehicle;
     * x_vehicle_coordinates = dx * cos(-psi) - dy * sin(-psi);
     * y_vehicle_coordinates = dy * cos(-psi) + dx * sin(-psi);
-* Third Order polynomial is calculated to the given x and y coordinates representing vehicle-coordinates. Main.cpp (Line 133)
+
+Following formula is used for the conversion.
+
+x_vehicle_coordinates[i] = dx * cos(-psi) - dy * sin(-psi);
+y_vehicle_coordinates[i] = dy * cos(-psi) + dx * sin(-psi);
+
+The path planning block passes the reference trajectory is typically passed to the control block as a polynomial. This polynomial is usually 3rd order, since third order polynomials will fit trajectories for most roads. 
+
+* Polyfit a 3rd order polynomials to vehicle co-ordinates (x-vehicle-coordinate, y-vehicle-co-ordinate, third_degree_polynomial).  Line 138
+* The cross-track error is calculated by evaluating the polynomial function (polyeval())  - Line 142
+* The psi error, or epsi, which is calculated from the derivative of polynomial fit line - Line 143
+
+**The entire state funtion need to be calculated in terms of vehicle co-ordinates from the Map co-oridnates with additional Delay of 150ms **
+
+The initial State before the delay is 
+
+* x = 0;
+* y = 0;
+* ψ = 0;
+* cte = coeffs[0];
+* epsi = -atan(coeffs[1]);
+* Lf = 2.67; //measures the distance between the front of the vehicle and its center of gravity. The larger the vehicle, the slower the turn rate.
+
+After the latency is added below formula is used for calculation.
+
+* px_act = x + ( v * cos(ψ) * latency ) = v * latency;
+* py_act = y + ( v * sin(ψ) * latency ) = 0
+* psi_act = ψ - ( v * steering_angle * latency / Lf ); = - v * steering_angle * latency / LF;
+* v_act = v + a * delay; = v + throttle * dt;
+* cte_act = cte + ( v * sin(epsi0) * delay ) = cte + v * sin(epsi) * dt;
+* epsi_act = epsi - ( v * atan(coeffs[1]) * latency / Lf ) = epsi + psi_act;
+
+This is computed in the following lines in main.cpp (151 - 156)
 
 
 ### Rubric Point - Model Predictive Control with Latency : 
@@ -159,11 +192,6 @@ Other Values tried
 * A realistic delay might be on the order of 100 milliseconds. A latency of 150ms was added to increase stability.
 * The delay was added to the Kinematic Model and passed to MPC routine. The code for this is found in main.cpp (Lines 137 - 143)
 
-
-### Rubric Point - Model Predictive Control with Latency : 
-
-** A polynomial is fitted to waypoints.
-If the student preprocesses waypoints, the vehicle state, and/or actuators prior to the MPC procedure it is described. **
 
 
 
