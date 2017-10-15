@@ -100,23 +100,22 @@ So, I modified both N, dt with Various values. There are videos for N=7 and dt =
 
 Finally, N=7 with dt = 0.1 and Latency with 150 ms worked various speeds of 50, 75 and 100 MPH. All the values were based on trial and Error.  
 
-The tuning of cost funtions played a major role in achieveing the final result. I increased the Orientation error by multiplicative factor(10) and a higher penalty factor (1250) was added to the steering angle for a stable control behavior at higher velocities. I even tuned the latency to 150 ms to account for the processing time of the solver and the latency of the communication with the simulator. 
+The tuning of cost funtions played a major role in achieveing the final result. I increased the Orientation error by multiplicative factor(5) and a higher penalty factor (1250) was added to the steering angle for a stable control behavior at higher velocities. I even tuned the latency to 150 ms to account for the processing time of the solver and the latency of the communication with the simulator. 
 
 This did help to reduce the Oscillations.
 
-All these changes can be found at lines 87, 100 and 101 in MPC.cpp.
-
 Final Values Used MPC.cpp
 
-	* N = 7;  //N is the number of timesteps in the horizon.
-	* dt = 0.1;  //dt is the time elapses between actuations
-	* reference_cte = 0.0;
-	* reference_epsi = 0.0;
-	* reference_v = 50.0; 
-	* Weight for reference_epsi = 10
-	* Weight for Orientation error = 10
-	* Weight for Steering angle = 1250
-	* Latency = 150 ms
+	* N = 7;  //Line number 18 in MPC.cpp
+	* dt = 0.1;  //Line number 19 in MPC.cpp 
+	* reference_cte = 0.0; //Line number 21 in MPC.cpp 
+	* reference_epsi = 0.0; //Line number 22 in MPC.cpp 
+	* reference_v = 50.0; //Line number 23 in MPC.cpp 
+	* Weight for reference_epsi = 10 //Line number 87 in MPC.cpp
+	* Weight for throttle/acceleration = 50 //Line number 95 in MPC.cpp  
+	* Weight for Orientation error = 5 //Line number 101 in MPC.cpp 
+	* Weight for Steering angle = 1250 //Line number 100 in MPC.cpp 
+	* Latency = 150 ms //Line number 27 in main.cpp 
 
 
 Other Values tried
