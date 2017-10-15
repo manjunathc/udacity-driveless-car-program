@@ -190,10 +190,7 @@ This is computed in the following lines in main.cpp (151 - 156)
 
 * In a real car, an actuation command won't execute instantly - there will be a delay as the command propagates through the system.
 * A realistic delay might be on the order of 100 milliseconds. A latency of 150ms was added to increase stability.
-* The delay was added to the Kinematic Model and passed to MPC routine. The code for this is found in main.cpp (Lines 137 - 143)
-
-
-
+* The delay was added to the Kinematic Model and passed to MPC routine. The code for this is found in main.cpp (Lines 151 - 156)
 
 
 ## Simulation
