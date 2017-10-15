@@ -100,7 +100,7 @@ So, I modified both N, dt with Various values. There are videos for N=7 and dt =
 
 Finally, N=7 with dt = 0.1 and Latency with 150 ms worked various speeds of 50, 75 and 100 MPH. All the values were based on trial and Error.  
 
-The tuning of cost funtions played a major role in achieveing the final result. I increased the Orientation error by multiplicative factor and a higher penalty factor was added to the steering angle for a stable control behavior at higher velocities.
+The tuning of cost funtions played a major role in achieveing the final result. I increased the Orientation error by multiplicative factor(10) and a higher penalty factor (1250) was added to the steering angle for a stable control behavior at higher velocities.
 
 All these changes can be found at lines 87, 100 and 101 in MPC.cpp.
 
