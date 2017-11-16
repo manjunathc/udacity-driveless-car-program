@@ -22,7 +22,7 @@ The goals for the project are
 * Also the car did not experience total acceleration over 10 m/s^2 and jerk that is greater than 10 m/s^3.
 
 The car lanes are marked as 
-* Lane 0 - LeftMost Lane
+* Lane 0 - Leftmost Lane
 * Lane 1 - Middle Lane
 * Lane 2 - RightMost Lane 
 
@@ -32,9 +32,13 @@ The car lanes are marked as
 * All these points are taken in vehicle co-ordinates.
 * These are the 5 achor points and added to spline, which is a single header file with high performance. 
 * These points acts as reference points. Now, with any "x" point, spline can provide the "y" point. So, for ex: To determine the targety at targetx=30, targety=s(targetx)
+* The future path points is calcluated from the previous path points.
+* The path points is calulated for 30 mts which are equally spaced across.
+* The spacing "N" is calculated using 
+  * N = target_distance*((0.02*49.5)/2.24) 
 
 
-The future path points is calcluated from the previous path points.
+
 
 #### The map of the highway is in data/highway_map.txt
 Each waypoint in the list contains  [x,y,s,dx,dy] values. x and y are the waypoint's map coordinate position, the s value is the distance along the road to get to that waypoint in meters, the dx and dy values define the unit normal vector pointing outward of the highway loop.
