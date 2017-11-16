@@ -43,14 +43,14 @@ The car lanes are marked as
 ![alt text][image1]
 
 ### Rubric Point
-##The car is able to drive at least 4.32 miles without incident.
+## The car is able to drive at least 4.32 miles without incident.
 * The sensor fusion data is being used for making sure, the car senses upto 30 mts in the front and 15 mts behind for any cars before making any lanes changes. This is depicted in the main.cpp at line numbers 274 and 288. 
 * If there are any cars within this range, the flag is set and this avoids any lane changes.
 * With this the car is able to make a necessary lane changes and able to complete the drive without any incident and maintain the speed below 49.5 MPH.
 
 ![alt text][image2]
 
-##The car drives according to the speed limit.
+## The car drives according to the speed limit.
 
 The maximum velocity of the car is set to 49.5. If the car velocity is reached, the velocity is automatically reduced at 2.24 mts/sec. This is done in main.cpp at line number 327.
 
@@ -78,12 +78,6 @@ Car was able to change lanes without issues on various occasions.
 
 ![alt text][image7]
 
-
-
-#### The map of the highway is in data/highway_map.txt
-Each waypoint in the list contains  [x,y,s,dx,dy] values. x and y are the waypoint's map coordinate position, the s value is the distance along the road to get to that waypoint in meters, the dx and dy values define the unit normal vector pointing outward of the highway loop.
-
-The highway's waypoints loop around so the frenet s value, distance along the road, goes from 0 to 6945.554.
 
 ## Basic Build Instructions
 
