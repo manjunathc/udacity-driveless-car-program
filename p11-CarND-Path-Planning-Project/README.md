@@ -1,11 +1,40 @@
-# CarND-Path-Planning-Project
+# Udacity Path Planning Project
 Self-Driving Car Engineer Nanodegree Program
    
-### Simulator.
-You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases).
+[//]: # (Image References)
+[image1]: ./output_images/30-meters.png
+[image2]: ./output_images/Completion-without-incident.png
+[image3]: ./output_images/left_lane_change.png
+[image4]: ./output_images/left_lane_change_2.png
+[image5]: ./output_images/No_lane_change_due_to_car_back_car.png
+[image6]: ./output_images/Reduced_velocity-due-to-front-car.png
+[image7]: ./output_images/right_lane_change.png
+[image8]: ./output_images/right_lane_change_without_incidents.png
 
-### Goals
-In this project your goal is to safely navigate around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. You will be provided the car's localization and sensor fusion data, there is also a sparse map list of waypoints around the highway. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible, note that other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s^2 and jerk that is greater than 10 m/s^3.
+
+
+The goals for the project are 
+
+* To safely navigate around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. 
+* The car's localization and sensor fusion data, there is also a sparse map list of waypoints around the highway. 
+* The car drives < 50 MPH speed limit. The car avoids hitting other cars at all cost as well as driving inside of the marked road lanes at all times. 
+* The car was able to drive wihtout incidents upto 15-20 miles. 
+* Also the car did not experience total acceleration over 10 m/s^2 and jerk that is greater than 10 m/s^3.
+
+The car lanes are marked as 
+* Lane 0 - LeftMost Lane
+* Lane 1 - Middle Lane
+* Lane 2 - RightMost Lane 
+
+* The car starts at Lane 1 with 0 velocity and gradulally increases the velocity at 2.24 mts/sec. 
+* The maximum velocity of the car is set to 49.5 which is less than speed Limit of the highway.
+* The car uses either the two points either from current or previous path points along with 30, 60, 90 waypoints in Frenet Co-ordinates. 
+* All these points are taken in vehicle co-ordinates.
+* These are the 5 achor points and added to spline, which is a single header file with high performance. 
+* These points acts as reference points. Now, with any "x" point, spline can provide the "y" point. So, for ex: To determine the targety at targetx=30, targety=s(targetx)
+
+
+The future path points is calcluated from the previous path points.
 
 #### The map of the highway is in data/highway_map.txt
 Each waypoint in the list contains  [x,y,s,dx,dy] values. x and y are the waypoint's map coordinate position, the s value is the distance along the road to get to that waypoint in meters, the dx and dy values define the unit normal vector pointing outward of the highway loop.
