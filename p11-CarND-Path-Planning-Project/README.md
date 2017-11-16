@@ -42,6 +42,41 @@ The car lanes are marked as
 
 ![alt text][image1]
 
+### Rubric Point
+##The car is able to drive at least 4.32 miles without incident.
+* The sensor fusion data is being used for making sure, the car senses upto 30 mts in the front and 15 mts behind for any cars before making any lanes changes. This is depicted in the main.cpp at line numbers 274 and 288. 
+* If there are any cars within this range, the flag is set and this avoids any lane changes.
+* With this the car is able to make a necessary lane changes and able to complete the drive without any incident and maintain the speed below 49.5 MPH.
+
+![alt text][image2]
+
+##The car drives according to the speed limit.
+
+The maximum velocity of the car is set to 49.5. If the car velocity is reached, the velocity is automatically reduced at 2.24 mts/sec. This is done in main.cpp at line number 327.
+
+## Max Acceleration and Jerk are not Exceeded.
+The car starts at 0 velocity and accelerated at 2.24 m/s until it reaches 49.5 MPH(Line 202 and line 329). This reduces the jerk and max accelerations.
+
+## Car does not have collisions.
+With proper lane checks while switching avoids the car with any collision. The car was able to drive 13 miles without collisions with proper lane changes.
+
+![alt text][image8]
+
+## The car stays in its lane, except for the time between changing lanes. 
+All through the highway travel, car was within the lanes. If there was no cars, the car was moved into middle lane. (Main.cpp - Line 334 - 343)
+
+## The car is able to change lanes
+Car was able to change lanes without issues on various occasions.
+
+![alt text][image3]
+
+![alt text][image4]
+
+![alt text][image5]
+
+![alt text][image6]
+
+![alt text][image7]
 
 
 
