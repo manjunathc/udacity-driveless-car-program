@@ -36,6 +36,11 @@ The car lanes are marked as
 * The path points is calulated for 30 mts which are equally spaced across.
 * The spacing "N" is calculated using 
   * N = target_distance*((0.02*49.5)/2.24) 
+  * Where - Target_distance is calculated using the Pythagoras theorem.
+* With spline, for each value of x, corresponding y value is calculated, and converted into vehicle reference points.
+* This provides a smooth slope as per the image below
+
+![alt text][image1]
 
 
 
