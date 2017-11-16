@@ -66,7 +66,12 @@ With proper lane checks while switching avoids the car with any collision. The c
 All through the highway travel, car was within the lanes. If there was no cars, the car was moved into middle lane. (Main.cpp - Line 334 - 343)
 
 ## The car is able to change lanes
-Car was able to change lanes without issues on various occasions.
+Car was able to change lanes without issues on various occasions. The code for lane changes are handled in main.cpp and Line numbers are
+ * 281 - 284
+ * 292 - 296
+ * 302 - 344
+
+ The car is moved into middle lane, when no cars were present. 
 
 ![alt text][image3]
 
