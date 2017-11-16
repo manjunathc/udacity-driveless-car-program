@@ -71,7 +71,9 @@ Car was able to change lanes without issues on various occasions. The code for l
  * 292 - 296
  * 302 - 344
 
- The car is moved into middle lane, when no cars were present. 
+ The car checks for 30 mts in the front and 15 mts in the back. if there are any cars found by sensor fusion data, car stays in same lane.
+* Line numbers 307 - 324
+
 
 ![alt text][image3]
 
