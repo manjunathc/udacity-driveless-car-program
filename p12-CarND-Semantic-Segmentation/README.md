@@ -2,8 +2,14 @@
 ## Semantic Segmentation
 
 [//]: # (Image References)
-[image1]: ./output_images/compiled_code.png
-[image2]: ./output_images/generic_cmake_list.png
+[image1]: ./output_images/FCN.png
+[image2]: ./output_images/FCN2.png
+[image3]: ./output_images/Upsampling.png
+[image4]: ./output_images/skip-layers.png
+[image5]: ./output_images/loss-plot.png
+[image6]: ./runs/um_000013.png
+[image7]: ./runs/um_000011.png
+[image8]: ./runs/um_000015.png
 
 ### Introduction
 The goals for the project are 
@@ -11,12 +17,28 @@ The goals for the project are
 * To label the pixels of a road in images using a Fully Convolutional Network (FCN). 
 * Each pixel is labeled either as Road or non-roads. The same classification can be applied to other object such as other cars, bicycle etc.
 * However, as per current project requirements, I have used to classify only Raod and Non-roads.
-* Project Uses "Fully convolutional network (FCN)" developed at [Berkeley] https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf. 
+* Project Uses "Fully convolutional network (FCN)" developed at [Berkeley] (https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf). 
 * FCN uses convutional layers uses VGG net with Downsampling and Upsampling inside the network
 * Each layer in the covnet is a three-dimensional array of size h x w x d where h and w are spatial dimensions and d is the feature or channel dimension.
-* VGG Net has 
-
-
+* VGG Net has seven layers and a Fully connected layer.
+![alt text][image1]
+* Each layer is downsized h/4, h/8 and h/16 and fully connected layer at h/32.
+![alt text][image2]
+* FCN uses a concept of Upsampling and Skip layers to maintain the spatial dimension of the entire image. 
+![alt text][image3]
+![alt text][image4]
+* Upsampling uses a Transposed Convolution with kernel sizes of 4, 4 and 16 with Strides of 2, 2 and 8. The code is present in the main.py at lines 65 to 100.
+* Following hyper parameters were used in the project.
+	* keep_prob_stat = 0.8
+	* learning_rate_stat = 1e-4
+* Network was trained for 20 epochs
+* The logs are presents in the nohup.out
+* The loss function is plotted below.
+![alt text][image5]
+* Output Images with Pixel labels are present below.
+![alt text][image6]
+![alt text][image7]
+![alt text][image8]
 
 ### Setup
 ##### Frameworks and Packages
