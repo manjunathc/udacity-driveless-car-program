@@ -3,7 +3,7 @@
 
 [//]: # (Image References)
 [image1]: ./output_images/FCN.png
-[image2]: ./output_images/FCN2.png
+[image2]: ./output_images/FCN-2.png
 [image3]: ./output_images/Upsampling.png
 [image4]: ./output_images/skip-layers.png
 [image5]: ./output_images/loss-plot.png
@@ -34,7 +34,7 @@ The goals for the project are
 ### Rubric Point
 ## On average, the model decreases loss over time..
 * The logs are presents in the nohup.out
-* The loss function is plotted below. [Log File] (./nohup.out)
+* The loss function is plotted below. [Log File] (https://github.com/manjunathc/udacity-driveless-car-program/blob/master/p12-CarND-Semantic-Segmentation/nohup.out)
 ![alt text][image5]
 
 ## Does the project use reasonable hyperparameters?
@@ -46,10 +46,12 @@ The goals for the project are
 
 ## Does the project correctly label the road?
 * Output Images with Pixel labels are present below.
+
 ![alt text][image6]
 ![alt text][image7]
 ![alt text][image8]
 
+* All other images are found in the [run] (https://github.com/manjunathc/udacity-driveless-car-program/blob/master/p12-CarND-Semantic-Segmentation/runs) directory.  
 
 ### Setup
 ##### Frameworks and Packages
