@@ -31,7 +31,7 @@ The goals for the project are
 * Network was trained for 20 epochs
 
 
-### Rubric Points
+# Rubric Points
 ## On average, the model decreases loss over time..
 * The logs are presents in the nohup.out
 * The loss function is plotted below. [Log File](./nohup.out)
