@@ -1,6 +1,14 @@
-# Semantic Segmentation
+# Self-Driving Car Engineer Nanodegree Program
+## Semantic Segmentation
+
 ### Introduction
-In this project, you'll label the pixels of a road in images using a Fully Convolutional Network (FCN).
+The goals for the project are 
+
+* To label the pixels of a road in images using a Fully Convolutional Network (FCN). 
+* Each pixel is labeled either as Road or non-roads. The same classification can be applied to other object such as other cars, bicycle etc.
+* However, as per current project requirements, I have used to classify only Raod and Non-roads.
+* Project Uses "Fully convolutional network (FCN)" developed at [Berkeley] https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf. 
+
 
 ### Setup
 ##### Frameworks and Packages
