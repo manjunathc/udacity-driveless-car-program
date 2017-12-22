@@ -1,0 +1,51 @@
+2017-12-21 21:45:33.191293: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2017-12-21 21:45:33.191574: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: Tesla M60
+major: 5 minor: 2 memoryClockRate (GHz) 1.1775
+pciBusID 0000:00:1e.0
+Total memory: 7.43GiB
+Free memory: 7.35GiB
+2017-12-21 21:45:33.191601: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2017-12-21 21:45:33.191609: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2017-12-21 21:45:33.194030: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla M60, pci bus id: 0000:00:1e.0)
+2017-12-21 21:45:33.292041: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla M60, pci bus id: 0000:00:1e.0)
+2017-12-21 21:45:33.293260: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla M60, pci bus id: 0000:00:1e.0)
+2017-12-21 21:45:41.989108: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla M60, pci bus id: 0000:00:1e.0)
+2017-12-21 21:45:42.039483: I tensorflow/compiler/xla/service/platform_util.cc:58] platform CUDA present with 1 visible devices
+2017-12-21 21:45:42.039511: I tensorflow/compiler/xla/service/platform_util.cc:58] platform Host present with 16 visible devices
+2017-12-21 21:45:42.044177: I tensorflow/compiler/xla/service/service.cc:198] XLA service 0x4432a60 executing computations on platform Host. Devices:
+2017-12-21 21:45:42.044199: I tensorflow/compiler/xla/service/service.cc:206]   StreamExecutor device (0): <undefined>, <undefined>
+2017-12-21 21:45:42.045669: I tensorflow/compiler/xla/service/platform_util.cc:58] platform CUDA present with 1 visible devices
+2017-12-21 21:45:42.045695: I tensorflow/compiler/xla/service/platform_util.cc:58] platform Host present with 16 visible devices
+2017-12-21 21:45:42.049481: I tensorflow/compiler/xla/service/service.cc:198] XLA service 0x445b120 executing computations on platform CUDA. Devices:
+2017-12-21 21:45:42.049502: I tensorflow/compiler/xla/service/service.cc:206]   StreamExecutor device (0): Tesla M60, Compute Capability 5.2
+2017-12-21 21:45:42.992183: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla M60, pci bus id: 0000:00:1e.0)
+2017-12-21 21:45:43.038789: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla M60, pci bus id: 0000:00:1e.0)
+TensorFlow Version: 1.2.1
+Default GPU Device: /gpu:0
+Tests Passed
+Tests Passed
+Tests Passed
+Tests Passed
+Tests Passed
+Epoch 1 of 20: Training loss: 0.7112
+Epoch 2 of 20: Training loss: 0.6564
+Epoch 3 of 20: Training loss: 0.5213
+Epoch 4 of 20: Training loss: 0.2736
+Epoch 5 of 20: Training loss: 0.1543
+Epoch 6 of 20: Training loss: 0.1827
+Epoch 7 of 20: Training loss: 0.1168
+Epoch 8 of 20: Training loss: 0.0798
+Epoch 9 of 20: Training loss: 0.0717
+Epoch 10 of 20: Training loss: 0.1447
+Epoch 11 of 20: Training loss: 0.0502
+Epoch 12 of 20: Training loss: 0.0645
+Epoch 13 of 20: Training loss: 0.0803
+Epoch 14 of 20: Training loss: 0.0523
+Epoch 15 of 20: Training loss: 0.0364
+Epoch 16 of 20: Training loss: 0.0314
+Epoch 17 of 20: Training loss: 0.0782
+Epoch 18 of 20: Training loss: 0.0730
+Epoch 19 of 20: Training loss: 0.0215
+Epoch 20 of 20: Training loss: 0.0515
+Training Finished. Saving test images to: ./runs/1513895318.0627992
