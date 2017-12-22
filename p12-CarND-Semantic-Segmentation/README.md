@@ -17,7 +17,7 @@ The goals for the project are
 * To label the pixels of a road in images using a Fully Convolutional Network (FCN). 
 * Each pixel is labeled either as Road or non-roads. The same classification can be applied to other object such as other cars, bicycle etc.
 * However, as per current project requirements, I have used to classify only Raod and Non-roads.
-* Project Uses "Fully convolutional network (FCN)" developed at [Berkeley] (https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf). 
+* Project Uses "Fully convolutional network (FCN)" developed at [Berkeley](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf). 
 * FCN uses convutional layers uses VGG net with Downsampling and Upsampling inside the network
 * Each layer in the covnet is a three-dimensional array of size h x w x d where h and w are spatial dimensions and d is the feature or channel dimension.
 * VGG Net has seven layers and a Fully connected layer.
@@ -34,7 +34,7 @@ The goals for the project are
 ### Rubric Point
 ## On average, the model decreases loss over time..
 * The logs are presents in the nohup.out
-* The loss function is plotted below. [Log File] (https://github.com/manjunathc/udacity-driveless-car-program/blob/master/p12-CarND-Semantic-Segmentation/nohup.out)
+* The loss function is plotted below. [Log File](./nohup.out)
 ![alt text][image5]
 
 ## Does the project use reasonable hyperparameters?
@@ -51,7 +51,7 @@ The goals for the project are
 ![alt text][image7]
 ![alt text][image8]
 
-* All other images are found in the [run] (https://github.com/manjunathc/udacity-driveless-car-program/blob/master/p12-CarND-Semantic-Segmentation/runs) directory.  
+* All other images are found in the [run](./runs) directory.  
 
 ### Setup
 ##### Frameworks and Packages
