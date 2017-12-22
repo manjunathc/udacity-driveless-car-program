@@ -28,17 +28,28 @@ The goals for the project are
 ![alt text][image3]
 ![alt text][image4]
 * Upsampling uses a Transposed Convolution with kernel sizes of 4, 4 and 16 with Strides of 2, 2 and 8. The code is present in the main.py at lines 65 to 100.
+* Network was trained for 20 epochs
+
+
+### Rubric Point
+## On average, the model decreases loss over time..
+* The logs are presents in the nohup.out
+* The loss function is plotted below. [Log File] (./nohup.out)
+![alt text][image5]
+
+## Does the project use reasonable hyperparameters?
 * Following hyper parameters were used in the project.
 	* keep_prob_stat = 0.8
 	* learning_rate_stat = 1e-4
-* Network was trained for 20 epochs
-* The logs are presents in the nohup.out
-* The loss function is plotted below.
-![alt text][image5]
+	* epoch = 20
+	* batch-size = 1
+
+## Does the project correctly label the road?
 * Output Images with Pixel labels are present below.
 ![alt text][image6]
 ![alt text][image7]
 ![alt text][image8]
+
 
 ### Setup
 ##### Frameworks and Packages
