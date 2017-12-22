@@ -57,7 +57,7 @@ The goals for the project are
 # References
 
 * [Berkley Paper](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)
-* [Berkley Jon Long and Evan Shelhamer CVPR15 Caffe Tutorial](http://tutorial.caffe.berkeleyvision.org/caffe-cvpr15-pixels.pdf)
+* [Jon Long and Evan Shelhamer CVPR15 Caffe Tutorial](http://tutorial.caffe.berkeleyvision.org/caffe-cvpr15-pixels.pdf)
 * [CS231N 2017 - Stanford - Lecture 11 | Detection and Segmentation](https://www.youtube.com/watch?v=nDPWywWRIRo&t=1103s&index=11&list=PLzUTmXVwsnXod6WNdg57Yc3zFx_f-RYsq)
 
 
