@@ -1,6 +1,10 @@
 # Self-Driving Car Engineer Nanodegree Program
 ## Semantic Segmentation
 
+[//]: # (Image References)
+[image1]: ./output_images/compiled_code.png
+[image2]: ./output_images/generic_cmake_list.png
+
 ### Introduction
 The goals for the project are 
 
@@ -8,6 +12,10 @@ The goals for the project are
 * Each pixel is labeled either as Road or non-roads. The same classification can be applied to other object such as other cars, bicycle etc.
 * However, as per current project requirements, I have used to classify only Raod and Non-roads.
 * Project Uses "Fully convolutional network (FCN)" developed at [Berkeley] https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf. 
+* FCN uses convutional layers uses VGG net with Downsampling and Upsampling inside the network
+* Each layer in the covnet is a three-dimensional array of size h x w x d where h and w are spatial dimensions and d is the feature or channel dimension.
+* VGG Net has 
+
 
 
 ### Setup
